@@ -1,0 +1,36 @@
+{% set url_prefix = '' %}
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    {# seo #}
+    <title>{{ page_title | default("Hyperlens") }}</title>
+    <meta name="description" content="{{ page_description | default("Reality is about to get a lot more exciting") }}">
+    <meta property="og:title" content="{{ page_title | default("Hyperlens") }}">
+    <meta property="og:description" content="{{ page_description | default("Reality is about to get a lot more exciting") }}">
+    <meta property="og:image" content="{{ page_social_image | default("/social-share.png") }}">
+    <link rel="icon" href="{{ url_prefix }}favicon.png">
+    <link rel="apple-touch-icon" href="{{ url_prefix }}apple-touch-icon.png">
+    {# styles #}
+    <link href="{{ url_prefix }}css/style.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="main-wrap">
+    {% include 'layouts/_header.njk' %}
+    {% block content %}{% endblock %}
+    {% include 'layouts/_footer.njk' %}
+</div>
+
+<script src="{{ url_prefix }}js/main.min.js"></script>
+
+{% include 'layouts/_seo-gtag.njk' %}
+</body>
+</html>
+
+
+
+
+

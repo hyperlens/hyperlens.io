@@ -1,0 +1,107 @@
+// normalize-css подключается с помощью postcss-normalize
+@import "include/variables";
+@import "include/utils";
+@import "include/general";
+@import "include/layout";
+
+
+@t-ease-out: cubic-bezier(0,0,.0,1);
+@t-ease-out-smooth: cubic-bezier(0,0,.4,1);
+
+
+// common
+.u-bg-gray {background: @c-grey-light;}
+.u-show-fade {
+    opacity: 0; transition: 0.6s ease-in-out;
+    &.is-showed {opacity: 1;}
+}
+.u-show-fade-inner {
+    opacity: 0; transition: 0.6s 0.1s ease-in-out;
+    .is-showed--inner & {opacity: 1;}
+}
+.main-wrap {}
+
+
+// index
+
+// index industry
+@t-industry-lens-bg: 1s ease;
+@t-industry-lens-margin: 0.1s;
+@t-industry-lens-transform: 1.5s;
+.index-industry-section {
+    &.is-showed {
+        background: @c-grey-light; transition: @t-industry-lens-bg;
+        .index-industry__cover {background: @c-grey-light;}
+    }
+}
+.index-industry {min-height: 768px; position: relative; display: flex; justify-content: center; align-items: center; z-index: 1; overflow: hidden;}
+.index-industry__lens-layer {
+    position: absolute; left: 50%; top: 50%; margin: -260px 0 0 -72px; z-index: -1;
+    transition: @t-industry-lens-transform @t-industry-lens-margin @t-ease-out;
+}
+.index-industry__cover {
+    position: absolute; top: 0; height: 100%; width: 50%; background: @c-white;
+    transition: margin @t-industry-lens-margin ease-in,
+        transform @t-industry-lens-transform @t-industry-lens-margin @t-ease-out,
+        background @t-industry-lens-bg;
+}
+.index-industry__cover--left {right: 50%;}
+.index-industry__cover--right {left: 50%;}
+.index-industry.is-showed {
+    .index-industry__lens-layer {}
+    .index-industry__lens-layer--1 {transform: translateX(-339px);}
+    .index-industry__lens-layer--2 {transform: translateX(-113px);}
+    .index-industry__lens-layer--3 {transform: translateX(113px);}
+    .index-industry__lens-layer--4 {transform: translateX(339px);}
+    .index-industry__cover {}
+    .index-industry__cover--left {transform: translateX(-339px); margin-right: 72px;}
+    .index-industry__cover--right {transform: translateX(339px); margin-left: 72px;}
+}
+
+// index industry description
+.index-industry-description-section {padding-top: 96px;}
+
+// index industry timeline
+.index-timeline-section {
+    overflow-x: auto; overflow-y: hidden; cursor: grab;
+    &.is-grabbing {cursor: grabbing;}
+}
+.index-timeline {display: flex; margin-left: 0; margin-right: 0; max-width: none; width: fit-content;}
+.index-timeline--header {margin-bottom: 40px; align-items: baseline;}
+.index-timeline--content {}
+.index-timeline__item {
+    &+& {margin-left: 150px;}
+}
+.index-timeline__item-year {margin-bottom: 28px;}
+.index-timeline__item-grid {display: flex;}
+.index-timeline__cell {
+    &+& {margin-left: 20px;}
+}
+.index-timeline__cell--first {width: 246px; flex-shrink: 0;}
+.index-timeline__cell--arkit {width: 236px; flex-shrink: 0;}
+.index-timeline__cell--arcore {width: 400px; flex-shrink: 0;}
+.index-timeline__image {margin-bottom: 28px;}
+@media (min-width: 1366px) {
+    .index-timeline {padding: 0 calc((100vw - @container-width) / 2 );}
+}
+
+// index industry research
+.index-industry-research-section {}
+.index-industry-research__quote {margin-bottom: 20px;}
+.index-industry-research__source {display: flex;}
+.index-industry-research__source-caption {margin-right: 14px;}
+.index-industry-research__graph {
+    margin-top: 120px; display: flex; align-items: flex-end; margin-bottom: 30px;
+    &.is-showed .index-industry-research__graph-column::after {transform: scaleY(1);}
+}
+.index-industry-research__graph-column {
+    width: 50%;
+    &::after {content: ''; display: block; background: #fff; margin-top: 13px; transform: scaleY(0); transform-origin: 50% 100%; transition: 1.5s 0.2s cubic-bezier(0.2,0,0.1,1);}
+}
+.index-industry-research__graph-column--left::after {height: 31px;}
+.index-industry-research__graph-column--right::after {height: 329px;}
+.index-industry-research__graph-value {
+
+}
+
+
