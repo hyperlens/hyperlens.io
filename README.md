@@ -1,4 +1,4 @@
-## Official Minter About website [about.minter.network](https://about.minter.network)
+## Hyperlens
 
 
 ### Build
