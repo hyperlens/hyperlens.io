@@ -15,7 +15,10 @@
   "author": "shrpne",
   "license": "ISC",
   "private": true,
-  "dependencies": {},
+  "dependencies": {
+    "intersection-observer": "^0.5.0",
+    "root-units": "^2.2.0"
+  },
   "devDependencies": {
     "autoprefixer": "^9.1.1",
     "@babel/core": "^7.0.0",

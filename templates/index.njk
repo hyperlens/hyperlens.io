@@ -7,131 +7,129 @@
 
 
     <article>
-        <div style="height: 150vh;"></div>
         {# industry #}
         <section class="index-industry-section" data-show data-show-threshold="0.02">
             <div class="index-industry u-container" data-show data-show-threshold="0.25">
-                <div class="index-industry__cover index-industry__cover--left"></div>
+                <div class="index-industry__cover index-industry__cover--left u-hidden-small-down"></div>
                 <img class="index-industry__lens-layer index-industry__lens-layer--1" src="{{ url_prefix }}img/lens-industry.svg" alt="" role="presentation">
                 <img class="index-industry__lens-layer index-industry__lens-layer--2" src="{{ url_prefix }}img/lens-industry.svg" alt="" role="presentation">
                 <img class="index-industry__lens-layer index-industry__lens-layer--3" src="{{ url_prefix }}img/lens-industry.svg" alt="" role="presentation">
                 <img class="index-industry__lens-layer index-industry__lens-layer--4" src="{{ url_prefix }}img/lens-industry.svg" alt="" role="presentation">
-                <div class="index-industry__cover index-industry__cover--right"></div>
+                <div class="index-industry__cover index-industry__cover--right u-hidden-small-down"></div>
                 <h2 class="index-industry__title u-title">
                     We present how the main players use the AR technology and cameras <br>
                     我们介绍主要玩家如何使<br/>用增强现实技术和相机
                 </h2>
             </div>
 
-            <div class="index-industry-description-section u-container u-section">
-                <div class="u-grid u-show-fade"  data-show>
-                    <div class="u-cell u-cell--first">Market</div>
-                    <div class="u-cell u-cell--second">
-                        <h3 class="u-caption">Ecosystem +<br/>potential</h3>
+            <div class="u-container u-section index-industry-content">
+                <div class="u-grid u-grid--vertical-margin">
+                    <div class="u-cell u-cell--first u-show-fade" data-show>
+                        <p class="u-sticky">Market</p>
                     </div>
-                    <div class="u-cell u-cell--third">
-                        <p>All of the major players, such as Apple, Google, Facebook, Samsung, and Snapchat have seen the shifts in user behaviour over the last decade. Users prefer mobile. As smartphone cameras have become more capable they are seeing a dramatic shift towards videos.</p>
-                        <p>The users prefer visual media and AR is the natural evolution of this. It combines the best aspects of our digital and physical worlds to add convenience, value, and entertainment to our everyday lives. Google are already working towards integrating AR into the Chrome browser, and are running several other projects based on AR tech. Facebook have already incorporated AR into news feeds, Instagram, and Messenger, and we are seeing the emergence of third party filters for use on the Facebook family of apps. Apple are currently developing a powerful wireless headset for use with both AR and VR. Snapchat filters are ludicrously popular and along with Pokemon Go! created a much wider acceptance of AR in everyday lives.</p>
-                        <p>Hundreds of start-up companies are responding to trends by developing VR and AR technology to meet the demands of a rapidly growing market. However, disruptors rarely come from within a market. Corporations are so entrenched in their identity and existing model they never move far enough outside this restrictive box.</p>
-                        <p>The scope of AR is exponentially greater than any applications we’ve seen so far, and as wearables continue to develop demand is only going to increase. As AR and VR become increasingly important parts of our lives we will see screen time become obsolete. Long-haul travel will become an opportunity for down time, or even for checking out your destination before you arrive. Working remotely won’t hinder collaboration. Patients in hospitals will be able to escape to prettier surroundings to help reduce their stress.<br/>The list of applications we might see in the future of AR and VR is endless, and only time will tell which ones gain the most traction.</p>
-                    </div>
-                </div>
-            </div>
-
-            {# industry timeline #}
-            <div class="index-timeline-section" data-dragscroll>
-                <div class="index-timeline index-timeline--header u-container">
-                    <div class="index-timeline__item">
-                        <div class="index-timeline__cell index-timeline__cell--first">Market</div>
-                    </div>
-                    <div class="index-timeline__item">
-                        <h3 class="u-caption">Industry Milestones</h3>
-                    </div>
-                </div>
-                <div class="index-timeline index-timeline--content u-container">
-                    <div class="index-timeline__item">
-                        <h4 class="index-timeline__item-year u-caption">2014</h4>
-                        <div class="index-timeline__item-grid">
-                            <div class="index-timeline__cell index-timeline__cell--first">
-                                Google glass released to public in 2014 with the functions of ubiquitous computer.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="index-timeline__item">
-                        <h4 class="index-timeline__item-year u-caption">2016</h4>
-                        <div class="index-timeline__item-grid">
-                            <div class="index-timeline__cell">
-                                <img class="index-timeline__image" src="{{ prefix_url }}img/timeline-hololens.jpg" srcset="{{ prefix_url }}img/timeline-hololens@2x.jpg 2x" alt="Microsoft Hololens">
-                                <p>Microsoft introduces Hololens as a headset designed to put holograms and objects around you.</p>
-                            </div>
-                            <div class="index-timeline__cell">
-                                <img class="index-timeline__image" src="{{ prefix_url }}img/timeline-pokemon.jpg" srcset="{{ prefix_url }}img/timeline-pokemon@2x.jpg 2x" alt="Pokemon Go">
-                                <p>Pokemon Go comes into the world on 6 July of 2016 making the largest public involvement into AR technology through the phone camera — 45 millions of daily users.</p>
-                            </div>
-                            <div class="index-timeline__cell">
-                                <img class="index-timeline__image" src="{{ prefix_url }}img/timeline-snapchat.png" srcset="{{ prefix_url }}img/timeline-snapchat@2x.png 2x" alt="Snapchat">
-                                <p>Snapchat Ads add AR to user experience starting 2016.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="index-timeline__item">
-                        <h4 class="index-timeline__item-year u-caption">2017</h4>
-                        <div class="index-timeline__item-grid">
-                            <div class="index-timeline__cell index-timeline__cell--arkit">
-                                Apple builds ARKit and implement it into iPhone starting version 6. ARKit blends digital objects and information with the environment around you, taking apps far beyond the screen and freeing them to interact with the real world in entirely new ways.
-                            </div>
-                            <div class="index-timeline__cell">
-                                <img class="index-timeline__image" src="{{ prefix_url }}img/timeline-iphone.jpg" srcset="{{ prefix_url }}img/timeline-iphone@2x.jpg 2x" alt="iPhone X">
-                                <p>Apple releases iPhone X with TrueDepth Camera that among many features allows  unlocking the phone with user’s face only</p>
-                            </div>
-                            <div class="index-timeline__cell">
-                                <img class="index-timeline__image" src="{{ prefix_url }}img/timeline-magicleap.jpg" srcset="{{ prefix_url }}img/timeline-magicleap@2x.jpg 2x" alt=">Magic Leap">
-                                <p>Magic Leap announces its first product Magic Leap One headset that projects a digital light field into the user's eye therefore creating images over real-world objects.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="index-timeline__item">
-                        <h4 class="index-timeline__item-year u-caption">2018</h4>
-                        <div class="index-timeline__item-grid">
-                            <div class="index-timeline__cell index-timeline__cell--arcore">
-                                <p>Google develops ARCore. Using different APIs, ARCore enables your phone to sense its environment, understand the world and interact with information using motion tracking, environmental understanding and light estimation</p>
-                                <p>On the 8 May Google introduces I/O with, among other products, Google Lens for augmented objects and Google Maps with AR route tracking.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            {# industry research #}
-            <div class="index-industry-research-section u-container u-section">
-                <div class="u-grid">
-                    <div class="u-cell u-cell--first"></div>
                     <div class="u-cell u-cell--rest">
-                        <blockquote class="index-industry-research__quote">
-                            The global augmented reality and virtual reality market was valued at $6,158.5 million in 2017 by P&S Market Research. MRC is estimated to reach $66.68 billion by 2022, at&nbsp;a&nbsp;CAGR of 58.3%, as predicted in June 2016 by&nbsp;Stratistics MRC.
-                        </blockquote>
-                        <div class="index-industry-research__source">
-                            <div class="index-industry-research__source-caption">
-                                Researches:
+                        {# industry description #}
+                        <div class="u-grid u-grid--vertical-margin--mini u-show-fade" data-show>
+                            <div class="u-cell u-cell--rest-second">
+                                <h3 class="u-caption u-sticky">Ecosystem + <br class="u-hidden-medium-down">potential</h3>
                             </div>
-                            <div class="index-industry-research__source-content">
-                                psmarketresearch.com <br/>
-                                orbisresearch.com
+                            <button class="u-toggle-trigger u-semantic-button" data-toggle-trigger>+ view more</button>
+                            <div class="u-cell u-cell--rest-third u-toggle" data-toggle>
+                                <p>All of the major players, such as Apple, Google, Facebook, Samsung, and Snapchat have seen the shifts in user behaviour over the last decade. Users prefer mobile. As smartphone cameras have become more capable they are seeing a dramatic shift towards videos.</p>
+                                <p>The users prefer visual media and AR is the natural evolution of this. It combines the best aspects of our digital and physical worlds to add convenience, value, and entertainment to our everyday lives. Google are already working towards integrating AR into the Chrome browser, and are running several other projects based on AR tech. Facebook have already incorporated AR into news feeds, Instagram, and Messenger, and we are seeing the emergence of third party filters for use on the Facebook family of apps. Apple are currently developing a powerful wireless headset for use with both AR and VR. Snapchat filters are ludicrously popular and along with Pokemon Go! created a much wider acceptance of AR in everyday lives.</p>
+                                <p>Hundreds of start-up companies are responding to trends by developing VR and AR technology to meet the demands of a rapidly growing market. However, disruptors rarely come from within a market. Corporations are so entrenched in their identity and existing model they never move far enough outside this restrictive box.</p>
+                                <p>The scope of AR is exponentially greater than any applications we’ve seen so far, and as wearables continue to develop demand is only going to increase. As AR and VR become increasingly important parts of our lives we will see screen time become obsolete. Long-haul travel will become an opportunity for down time, or even for checking out your destination before you arrive. Working remotely won’t hinder collaboration. Patients in hospitals will be able to escape to prettier surroundings to help reduce their stress.<br/>The list of applications we might see in the future of AR and VR is endless, and only time will tell which ones gain the most traction.</p>
                             </div>
+                        </div>
+
+                        {# industry timeline #}
+                        <div class="index-timeline-header u-show-fade" data-show>
+                            <div class="index-timeline__item index-timeline__item--first u-hidden-large-down"></div>
+                            <h3 class="u-caption">Industry Milestones</h3>
+                        </div>
+                        <div class="index-timeline-section u-show-fade" data-dragscroll data-show>
+                            <div class="index-timeline u-container-padding">
+                                <div class="index-timeline__item index-timeline__item--first">
+                                    <h4 class="index-timeline__item-year u-caption">2014</h4>
+                                    <div class="index-timeline__item-grid">
+                                        <div class="index-timeline__cell index-timeline__cell--first">
+                                            Google glass released to public in 2014 with the functions of ubiquitous computer.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="index-timeline__item">
+                                    <h4 class="index-timeline__item-year u-caption">2016</h4>
+                                    <div class="index-timeline__item-grid">
+                                        <div class="index-timeline__cell">
+                                            <img class="index-timeline__image index-timeline__image--wide" src="{{ prefix_url }}img/timeline-hololens.jpg" srcset="{{ prefix_url }}img/timeline-hololens@2x.jpg 2x" alt="Microsoft Hololens">
+                                            <p class="index-timeline__text">Microsoft introduces Hololens as a headset designed to put holograms and objects around&nbsp;you.</p>
+                                        </div>
+                                        <div class="index-timeline__cell">
+                                            <img class="index-timeline__image index-timeline__image--default" src="{{ prefix_url }}img/timeline-pokemon.jpg" srcset="{{ prefix_url }}img/timeline-pokemon@2x.jpg 2x" alt="Pokemon Go">
+                                            <p>Pokemon Go comes into the world on 6 July of 2016 making the largest public involvement into AR technology through the phone camera — 45 millions of daily users.</p>
+                                        </div>
+                                        <div class="index-timeline__cell">
+                                            <img class="index-timeline__image index-timeline__image--default" src="{{ prefix_url }}img/timeline-snapchat.png" srcset="{{ prefix_url }}img/timeline-snapchat@2x.png 2x" alt="Snapchat">
+                                            <p>Snapchat Ads add AR to user experience starting 2016.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="index-timeline__item">
+                                    <h4 class="index-timeline__item-year u-caption">2017</h4>
+                                    <div class="index-timeline__item-grid">
+                                        <div class="index-timeline__cell index-timeline__cell--arkit">
+                                            Apple builds ARKit and implement it into iPhone starting version 6. ARKit blends digital objects and information with the environment around you, taking apps far beyond the screen and freeing them to interact with the real world in entirely new ways.
+                                        </div>
+                                        <div class="index-timeline__cell">
+                                            <img class="index-timeline__image index-timeline__image--wide" src="{{ prefix_url }}img/timeline-iphone.jpg" srcset="{{ prefix_url }}img/timeline-iphone@2x.jpg 2x" alt="iPhone X">
+                                            <p class="index-timeline__text">Apple releases iPhone X with TrueDepth Camera that among many features allows  unlocking the phone with user’s face only</p>
+                                        </div>
+                                        <div class="index-timeline__cell">
+                                            <img class="index-timeline__image index-timeline__image--default" src="{{ prefix_url }}img/timeline-magicleap.jpg" srcset="{{ prefix_url }}img/timeline-magicleap@2x.jpg 2x" alt=">Magic Leap">
+                                            <p>Magic Leap announces its first product Magic Leap One headset that projects a digital light field into the user's eye therefore creating images over real-world objects.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="index-timeline__item">
+                                    <h4 class="index-timeline__item-year u-caption">2018</h4>
+                                    <div class="index-timeline__item-grid">
+                                        <div class="index-timeline__cell index-timeline__cell--arcore">
+                                            <p>Google develops ARCore. Using different APIs, ARCore enables your phone to sense its environment, understand the world and interact with information using motion tracking, environmental understanding and light estimation</p>
+                                            <p>On the 8 May Google introduces I/O with, among other products, Google Lens for augmented objects and Google Maps with AR route tracking.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {# industry research #}
+                        <div class="index-industry-research-section">
+                            <blockquote class="index-industry-research__quote u-show-fade" data-show>
+                                The global augmented reality and virtual reality market was valued at $6,158.5 million in&nbsp;2017 by P&S Market Research. MRC is estimated to reach $66.68 billion by 2022, at&nbsp;a&nbsp;CAGR of 58.3%, as predicted in June 2016 by Stratistics MRC.
+                            </blockquote>
+                            <div class="index-industry-research__source u-show-fade" data-show>
+                                <div class="index-industry-research__source-caption">
+                                    Researches:
+                                </div>
+                                <div class="index-industry-research__source-content">
+                                    psmarketresearch.com <br/>
+                                    orbisresearch.com
+                                </div>
+                            </div>
+                            <div class="index-industry-research__graph" data-show="inner" data-show-threshold="0.25">
+                                <div class="index-industry-research__graph-column index-industry-research__graph-column--left u-show-fade-inner">
+                                    $6.16 billion in&nbsp;2017
+                                </div>
+                                <div class="index-industry-research__graph-column index-industry-research__graph-column--right u-show-fade-inner">
+                                    $66.68 billion by&nbsp;2022
+                                </div>
+                            </div>
+                            <a class="index-industry-research__graph-caption u-show-fade u-link--icon" href="#" data-show>
+                                Learn more about <br> investment opportunities
+                            </a>
                         </div>
                     </div>
                 </div>
-                <div class="index-industry-research__graph" data-show="inner" data-show-threshold="0.25">
-                    <div class="index-industry-research__graph-column index-industry-research__graph-column--left u-show-fade-inner">
-                        $6.16 billion in 2017
-                    </div>
-                    <div class="index-industry-research__graph-column index-industry-research__graph-column--right u-show-fade-inner">
-                        $66.68 billion by 2022
-                    </div>
-                </div>
-                <a class="index-industry-research__graph-caption u-show-fade u-link--icon" href="#" data-show>
-                    Learn more about <br> investment opportunities
-                </a>
             </div>
         </section>
 
