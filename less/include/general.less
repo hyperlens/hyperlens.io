@@ -20,9 +20,8 @@
 
 
 *, *::before, *::after {box-sizing: border-box;}
-html { height: 100%; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; -webkit-overflow-scrolling: touch;}
+html {-webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; -webkit-overflow-scrolling: touch;}
 body {
-    min-height: 100%;
     margin: 0;
     font-family: @body-font-family;
     font-size: 18px;
@@ -53,6 +52,19 @@ button {cursor: pointer; outline: none;}
 p, ul, ol {margin: 0;}
 p + p {margin-top: 1.25em;}
 sub, sup { font-size: 75%;}
+
+.u-list {
+    list-style: none; padding: 0;
+    * + & {margin-top: 1.25em;}
+    li {
+        padding: 0 0 0 40px; position: relative;
+        &::before {content: '—   '; position: absolute; left: 0; top: -2px;}
+    }
+    li + li {margin-top: 1.25em;}
+}
+@media (min-width: @breakpoint-large-up) {
+    .u-list li {padding-left: 65px;}
+}
 
 //input, textarea, select {
 //    font: inherit; color: @c-black; outline: none; caret-color: @c-main;

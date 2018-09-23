@@ -1,13 +1,21 @@
 import rootUnits from 'root-units';
-import initObserver from './observer';
-import dragScroll from './dragscroll';
-import initToggle from './toggle';
+import initObserver from './include/observer';
+import initUseCases from './include/use-cases';
+import HeaderMenu from './include/header-menu';
+import DragScroll from './include/dragscroll';
+import initToggle from './include/toggle';
 
-
+document.body.classList.remove('no-js');
 rootUnits.install({
     // disable RAF
     measure: measureTask => measureTask(),
 });
 initObserver();
-dragScroll();
+initUseCases();
+new HeaderMenu();
+new DragScroll('[data-dragscroll]');
 initToggle();
+
+setTimeout(() => {
+    document.body.classList.remove('animate-content-initial');
+}, 3000);

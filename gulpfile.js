@@ -31,7 +31,7 @@ let paths = {
         less: 'less/*.less',
         js: 'js/*.js',
         img: ['img/**/*.{png,jpg,gif,svg}'],
-        templatesDir: ['templates/'],
+        templatesDir: ['templates/', 'img/'],
         templatesFiles: 'templates/*.njk',
     },
     dest: {

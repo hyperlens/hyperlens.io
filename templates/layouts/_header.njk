@@ -1,3 +1,27 @@
 <header class="header" data-header>
+    <div class="header__layer u-bg__inner"></div>
+    <div class="header__container u-container" data-header-container>
+        <a class="header__logo" href="/" data-header-logo>
+            {% include "../../img/hyperlens-logo.svg" %}
+            {% include "../../img/hyperlens-logo-lens-1.svg" %}
+            {% include "../../img/hyperlens-logo-lens-2.svg" %}
+        </a>
+        <div class="header__menu-layer u-bg__inner"></div>
+        <nav class="header__menu" data-header-menu>
+            <a class="header__link is-active" href="#intro">Product</a>
+            <a class="header__link" href="#white-paper">Company</a>
+            <a class="header__link" href="#help">Investors</a>
+            <a class="header__link" href="#network">Developers</a>
+            <a class="header__link" href="#network">Business</a>
+            <a class="header__link" href="#network">Documents</a>
+            <a class="header__link" href="#network">FAQ</a>
 
+
+            <div class="header__menu-expand u-hidden-large-up"></div>
+            <a class="header__menu-email u-hidden-large-up" href="hi@hyperlens.com">hi@hyperlens.com</a>
+        </nav>
+        <button class="header__offcanvas-button u-semantic-button" data-header-button>
+            <span class="header__offcanvas-icon">Menu</span>
+        </button>
+    </div>
 </header>
