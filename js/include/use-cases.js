@@ -21,7 +21,7 @@ export default function initUseCases() {
         initDragScroll();
     }
 
-    window.addEventListener('resize', () => {
+    window.addEventListener('resize', debounce(() => {
         const isDesktop = checkDesktop();
         // change to desktop
         if (isDesktop && !isLastDesktop) {
@@ -36,7 +36,7 @@ export default function initUseCases() {
         }
 
         isLastDesktop = isDesktop;
-    });
+    }, 100));
 
 }
 
