@@ -15,8 +15,8 @@
 .u-bg--gray {
     &, .u-bg__inner {background: @c-grey-light;}
 }
-.u-bg-black {
-    &, .u-bg__inner {background: #000;}
+.u-bg--black {
+    &, .u-bg__inner {background: #000; color: #fff;}
 }
 .u-show-fade {
     opacity: 0; transition: opacity 0.6s ease-in-out;
@@ -94,10 +94,11 @@
 .header {position: fixed; left: 0; right: 0; top: 0; z-index: 10;}
 .header__layer {position: absolute; left: 0; top: 0; right: 0; height: var(--header-height); z-index: -1; background: #fff;}
 .header__container {display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; position: relative;}
-.header__logo {padding: 16px 0; position: relative;}
-.hl-logo {display: block; font-size: 0; width: auto; height: @hl-logo-small-height;}
-.hl-logo__lens--1 {width: 35px; height: auto; position: absolute; top: 16px; left: 0;}
-.hl-logo__lens--2 {width: 35px; height: auto; position: absolute; top: 16px; left: 35px;}
+.header__logo {padding: 16px 0; position: relative; transition: none;}
+.hl-logo {fill: currentColor; display: block; font-size: 0; width: auto; height: @hl-logo-small-height;}
+.hl-logo__lens {fill: currentColor; width: 35px; height: auto; position: absolute; top: 16px;}
+.hl-logo__lens--1 {left: 0;}
+.hl-logo__lens--2 {left: 35px;}
 .header__menu {display: none; flex-direction: column; align-items: flex-start;}
 .header__link { margin-top: 10px;}
 .header__menu-expand {flex-grow: 2;}
@@ -122,13 +123,12 @@
 @menu-icon-color: currentColor;
 .header__offcanvas-button {display: block; width: @menu-icon-size; height: @menu-icon-size; position: relative; text-align: center;}
 .header__offcanvas-icon {
-    transition: @menu-icon-transition ease-in; background: @menu-icon-color; position: absolute; height: 2px; width: 100%; left: 0; top: 50%; margin-top: -1px; font-size: 0;
-    &::before, &::after {transition: @menu-icon-transition; background: @menu-icon-color; height: 100%; width: 100%; content: ''; position: absolute; left: 0;}
-    &::before {top: 12px;}
-    &::after {top: -12px;}
+    transition: transform @menu-icon-transition ease-in; background: @menu-icon-color; position: absolute; height: 2px; width: 100%; left: 0; top: 50%; margin-top: -1px; font-size: 0;
+    &::before, &::after {transition: transform @menu-icon-transition; background: @menu-icon-color; height: 100%; width: 100%; content: ''; position: absolute; left: 0;}
+    &::before {transform: translateY(12px);}
+    &::after {transform: translateY(-12px);}
     .header__offcanvas-button.is-active & {
         background-color: transparent; transition: 0.15s ease-out;
-        &:before, &:after {transform-origin: 50% 50%; top: 0 !important;}
         &:before {transform: rotate3d(0, 0, 1, 45deg);}
         &:after {transform: rotate3d(0, 0, 1, -45deg);}
     }
@@ -141,8 +141,8 @@
     .header__link { margin-top: 15px;}
     .header__offcanvas-button {width: 50px; height: 50px;}
     .header__offcanvas-icon {
-        &::before {top: 16px;}
-        &::after {top: -16px;}
+        &::before {transform: translateY(16px);}
+        &::after {transform: translateY(-16px);}
     }
 }
 // incorrect mq merge
@@ -173,8 +173,40 @@
 
 
 // index
+.index-intro {min-height: 100vh; min-height: var(--rh); display: flex;}
+.index-intro__inner {
+    display: flex; align-items: center; justify-content: space-between; flex-direction: column; width: 100%; position: relative; z-index: 1; padding: var(--header-height) 0 32px;
+    &::before {content: '';}
+}
+.index-intro__center {}
+.index-intro__video { width: 100%;}
+.index-intro__title {transform: translateY(-33.3%);}
+.index-intro__controls {align-self: flex-start;}
+.index-intro__controls-item {
+    display: flex; align-items: center; margin-bottom: 8px; white-space: nowrap;
+    &:last-child {margin-bottom: 0;}
+}
+.index-intro__controls-icon {margin-right: 7px; flex-shrink: 0;}
+@media (min-width: @breakpoint-small-up) {
+    .index-intro__title {transform: translateY(-53%); margin-bottom: 32px;}
+    .index-intro__controls {display: flex; align-items: center;}
+    .index-intro__controls-item {
+        margin-right: 32px; margin-bottom: 0;
+        &:last-child {margin-right: 0;}
+    }
+}
+@media (min-width: @breakpoint-large-up) {
+    .index-intro__inner {padding-bottom: 64px;}
+    .index-intro__controls {width: 45%; align-self: flex-end; }
+}
+@media (orientation: landscape) {
+    .index-intro__video {position: absolute; width: 48.7%; top: 50%; left: 0; transform: translateY(-50%); margin-top: 20px; z-index: -1;}
+    .index-intro__title {transform: none; margin-bottom: 90px;}
+}
+
 
 // index platform
+.index-platform {}
 //.index-platform__world {margin-bottom: 100px;} // replaced with .u-section__part
 .index-case__list-wrap {}
 .index-case__list {

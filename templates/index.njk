@@ -1,20 +1,44 @@
 {% extends "layouts/default.njk" %}
 {% set page_title = "" %}
 {% set page_description = "" %}
+{% set body_class = "u-bg--black" %}
 
 {% block content %}
 
 
     <article class="main-inner">
-        <section class="index-intro">
-
+        <section class="index-intro u-container" data-observe-bg="black" data-observe-threshold="0.40">
+            <div class="index-intro__inner">
+                <div class="index-intro__center">
+                    <video class="index-intro__video" preload="auto" autoplay muted loop>
+                        <source src="/video/index-intro.mp4" type="video/mp4">
+                    </video>
+                    <h1 class="index-intro__title u-title">reality is about <br>
+                        to get a lot more exciting <br>
+                        现实即将获得更多令人兴奋的</h1>
+                </div>
+                <div class="index-intro__controls">
+                    <button class="index-intro__controls-item u-semantic-button">
+                        <img class="index-intro__controls-icon" src="/img/icon-triangle-play.svg" alt="" role="presentation">
+                        Watch video
+                    </button>
+                    <button class="index-intro__controls-item u-semantic-button">
+                        <img class="index-intro__controls-icon" src="/img/icon-triangle-down.svg" alt="" role="presentation">
+                        White paper
+                    </button>
+                    <button class="index-intro__controls-item u-semantic-button">
+                        <img class="index-intro__controls-icon" src="/img/icon-triangle-down.svg" alt="" role="presentation">
+                        One pager
+                    </button>
+                </div>
+            </div>
         </section>
 
         {# platform #}
-        <section class="u-section u-container">
+        <section class="index-platform u-section u-container">
             <div class="u-section__part">
                 <div class="u-grid u-grid--vertical-margin index-platform__world u-show-fade" data-observe-show>
-                    <div class="u-cell u-cell--first"></div>
+                    <div class="u-cell u-cell--first u-hidden-large-down"></div>
                     <div class="u-cell u-cell--second">
                         <h3 class="u-caption u-sticky">Welcome <br class="u-hidden-medium-down">to a New World</h3>
                     </div>
