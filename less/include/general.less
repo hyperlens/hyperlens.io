@@ -37,8 +37,14 @@ body {
 }
 
 a, .u-link {
-    color: inherit; outline: none; text-decoration: none; text-decoration-skip: ink; /*transition: 0.1s;*/
-    &:hover, &:focus {text-decoration: none; outline: none;}
+    color: inherit; outline: none; text-decoration: none; text-decoration-skip: ink;
+    &:hover, &:focus {text-decoration: underline; outline: none;}
+}
+@supports (text-decoration-color: transparent) {
+    a, .u-link {
+        text-decoration: underline; text-decoration-color: transparent; transition: text-decoration-color 0.15s;
+        &:hover, &:focus {text-decoration-color: currentColor;}
+    }
 }
 .u-link--icon {
     &::after {content: ''; width: 13px; height: 13px; background: url(../img/icon-arrow-link.svg); display: inline-block; margin-left: 5px;}

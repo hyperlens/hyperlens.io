@@ -1,5 +1,21 @@
 // support
 let support = {};
+support.transition = (function() {
+    let transitionEnd = (function() {
+        let element = document.body || document.documentElement,
+            transEndEventNames = {
+                WebkitTransition : 'webkitTransitionEnd',
+                MozTransition    : 'transitionend',
+                OTransition      : 'oTransitionEnd otransitionend',
+                transition       : 'transitionend'
+            }, name;
+        for (name in transEndEventNames) {
+            if (element.style[name] !== undefined) return transEndEventNames[name];
+        }
+    }());
+
+    return transitionEnd && { end: transitionEnd };
+})();
 support.passiveListener = (function () {
     let supportsPassive = false;
     try {
