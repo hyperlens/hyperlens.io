@@ -10,6 +10,11 @@
 
 
 // common
+:root {
+    // fallback until `root-units` not loaded
+    --rw: 100vw;
+    --rh: 100vh;
+}
 @t-body-bg: 1s;
 .u-bg, .u-bg, .u-bg__inner {transition: @t-body-bg; transition-property: background-color, color;}
 .u-bg--gray {
@@ -30,11 +35,21 @@
     .u-show-fade, .u-show-fade-inner {opacity: 1; transition: 0.6s 1s ease-in-out;}
 }
 .u-sticky {position: sticky; top: var(--header-height);}
+.u-controls__item {
+    margin-bottom: 8px; white-space: nowrap;
+    &:last-child {margin-bottom: 0;}
+}
+@media (min-width: @breakpoint-small-up) {
+    .u-controls {display: flex; align-items: center;}
+    .u-controls__item {
+        margin-right: 32px; margin-bottom: 0;
+        &:last-child {margin-right: 0;}
+    }
+}
 .u-toggle-trigger {
     margin-top: 17px; display: inline-block;
     &.is-toggled {display: none;}
 }
-
 @media (max-width: @breakpoint-small-down) {
     .u-toggle:not(.is-toggled) {display: none;}
 }
@@ -192,18 +207,10 @@
 .index-intro__video {width: 100%; display: block;}
 .index-intro__title {transform: translateY(-33.3%); position: relative; pointer-events: none;}
 .index-intro__controls {align-self: flex-start;}
-.index-intro__controls-item {
-    display: flex; align-items: center; margin-bottom: 8px; white-space: nowrap;
-    &:last-child {margin-bottom: 0;}
-}
-.index-intro__controls-icon {margin-right: 7px; flex-shrink: 0; stroke: currentColor; /*width: 14px; height: 14px;*/}
+.index-intro__controls-item {display: flex; align-items: center;}
+.index-intro__controls-icon {margin-right: 8px; flex-shrink: 0; stroke: currentColor; /*width: 14px; height: 14px;*/}
 @media (min-width: @breakpoint-small-up) {
     .index-intro__title {transform: translateY(-53%); margin-bottom: 32px;}
-    .index-intro__controls {display: flex; align-items: center;}
-    .index-intro__controls-item {
-        margin-right: 32px; margin-bottom: 0;
-        &:last-child {margin-right: 0;}
-    }
 }
 @media (min-width: @breakpoint-large-up) {
     .index-intro__inner {padding-bottom: 64px;}
@@ -211,7 +218,7 @@
 }
 @media (orientation: landscape) {
     .index-intro__video-wrap {position: absolute; width: 48.7%; top: 50%; left: 0; transform: translateY(-50%); margin-top: 20px;}
-    .index-intro__title {transform: none; margin-bottom: 90px;}
+    .index-intro__title {transform: none; margin-bottom: 80px;}
 }
 
 
@@ -413,6 +420,21 @@
 @media (min-width: @breakpoint-large-up) {
     .index-industry-research-section {margin-top: 120px;}
     .index-industry-research__graph {margin-top: 120px;}
+}
+
+
+// index technology
+.index-technology__video-section {perspective: 600px;}
+.index-technology__video {
+    display: block; max-width: 100%; transform: rotateX(45deg); transform-origin: 50% 100%; transition: 0.7s;
+    &.is-showed {transform: rotateX(0);}
+}
+.index-technology__controls {padding-bottom: 64px;}
+.index-technology__controls-caption {margin-bottom: 15px;}
+
+@media (min-width: @breakpoint-large-up) {
+    .index-technology__video {max-width: 60%; margin: auto;}
+    .index-technology__controls {max-width: 45%; margin-left: auto;}
 }
 
 

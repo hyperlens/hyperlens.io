@@ -83,10 +83,19 @@
     .u-cell--rest-third--t2 {width: 50%;}
 }
 @media (min-width: @breakpoint-large-up) {
-    .u-grid {
-        margin-left: -@grid-horizontal-margin;
-        & > .u-cell { padding-left: @grid-horizontal-margin;}
-    }
+    .u-cell--first {width: 20%;}
+    .u-cell--second {width: 35%;}
+    .u-cell--third {width: 45%;}
+    .u-cell--rest {width: 80%;}
+    .u-cell--rest-second {width: 43.75%;}
+    .u-cell--rest-third {width: 56.25%;}
+    .u-cell--first--t2 {width: 10%;}
+    .u-cell--rest--t2 {width: 90%;}
+
+    //.u-grid {
+    //    margin-left: -@grid-horizontal-margin;
+    //    & > .u-cell { padding-left: @grid-horizontal-margin;}
+    //}
     /*
     .u-cell--first {width: 20%;}
     .u-cell--second {width: 32%;}
@@ -95,7 +104,8 @@
     .u-cell--rest-second {width: 40%;}
     .u-cell--rest-third {width: 60%;}
     */
-    // pixperf
+    // pixperf padding
+    /*
     .u-cell--first {width: 19.2%;}
     .u-cell--second {width: 33.8%;}
     .u-cell--third {width: 47%;}
@@ -104,5 +114,10 @@
     .u-cell--rest-third {width: 58.17%;}
     .u-cell--first--t2 {width: 10%;}
     .u-cell--rest--t2 {width: 90%;}
+    */
+}
 
+@media (min-width: @breakpoint-large-up) {
+    .u-cell--second {padding-right: 80px;}
+    .u-cell--rest-second {padding-right: 80px;}
 }

@@ -7,6 +7,8 @@ export default function initIntro() {
     const videoEl = document.querySelector('[data-intro-video]');
     const watchButtonEl = document.querySelector('[data-intro-watch]');
     setTimeout(() => {
+        // enable play observer by removing `disabled` attr value
+        videoEl.setAttribute('data-observe-play', '');
         videoEl.play();
     }, INITIAL_ANIMATION_TIME);
 

@@ -46,9 +46,8 @@ a, .u-link {
         &:hover, &:focus {text-decoration-color: currentColor;}
     }
 }
-.u-link--icon {
-    &::after {content: ''; width: 13px; height: 13px; background: url(../img/icon-arrow-link.svg); display: inline-block; margin-left: 5px;}
-}
+.u-link--icon { display: inline-flex; align-items: baseline;}
+.u-link__icon {margin-left: 8px; stroke: currentColor; flex-shrink: 0;}
 .u-no-link {text-decoration: none;}
 .u-link--opacity {
     text-decoration: none; transition: 0.1s;
