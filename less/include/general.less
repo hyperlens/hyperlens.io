@@ -77,12 +77,13 @@ sub, sup { font-size: 75%;}
 //}
 //input {vertical-align: middle;}
 
-h1, h2, h3, h4, h5, h6, .u-caption {margin: 0; font: inherit; font-size: 26px; line-height: 32px; letter-spacing: 0;}
-.u-title, blockquote {margin: 0; font: inherit; font-size: 30px; line-height: 32px; font-weight: 600; text-transform: uppercase; letter-spacing: 0;}
+h1, h2, h3, h4, h5, h6 {margin: 0; font: inherit;}
+.u-caption {font-size: 26px; line-height: 32px; letter-spacing: 0;}
+.u-title, .u-title-text {margin: 0; font: inherit; font-size: 30px; line-height: 32px; font-weight: 600; text-transform: uppercase; letter-spacing: 0;}
 .u-title { margin-left: auto; margin-right: auto; text-align: center;}
 @media (min-width: @breakpoint-small-up) {
-    h1, h2, h3, h4, h5, h6, .u-caption {font-size: 30px; line-height: 1;}
-    .u-title, blockquote {font-size: 38px; line-height: 40px;}
+    .u-caption {font-size: 30px; line-height: 1;}
+    .u-title, .u-title-text {font-size: 38px; line-height: 40px;}
     .u-title {max-width: 720px; }
 }
 @media (min-width: @breakpoint-large-up) {
