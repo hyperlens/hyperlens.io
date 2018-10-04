@@ -412,8 +412,14 @@
 
         <section class="index-soft u-section u-container" data-observe-show data-observe-threshold="0.25">
             <div class="index-soft__inner u-title-text">
+                <div class="index-soft__lens-cover index-soft__lens-cover--1">
+                    <div class="index-soft__lens-cover-fill index-soft__lens-cover-fill--1 u-bg__inner"></div>
+                </div>
                 <div class="index-soft__lens-wrap index-soft__lens-wrap--1">
                     <img class="index-soft__lens-layer index-soft__lens-layer--1" src="{{ url_prefix }}img/lens-soft.svg" width="759" height="201" alt="" role="presentation" data-inline-svg>
+                </div>
+                <div class="index-soft__lens-cover index-soft__lens-cover--2">
+                    <div class="index-soft__lens-cover-fill index-soft__lens-cover-fill--2 u-bg__inner"></div>
                 </div>
                 <div class="index-soft__lens-wrap index-soft__lens-wrap--2">
                     <img class="index-soft__lens-layer index-soft__lens-layer--2" src="{{ url_prefix }}img/lens-soft.svg" width="759" height="201" alt="" role="presentation" data-inline-svg>
@@ -425,50 +431,89 @@
             </div>
         </section>
 
+        {# team #}
         <section class="index-team u-section">
             <div class="index-team__overflow u-container-padding u-show-fade" data-dragscroll data-observe-show>
-                <div class="index-team__overflow-inner {#u-container-padding#}">
-                    <div class="u-grid u-grid--vertical-margin">
-                        <div class="u-cell u-cell--first">
-                            <h2 class="">The Team</h2>
+                <div class="u-grid u-grid--vertical-margin">
+                    <div class="u-cell u-cell--first">
+                        <h2 class="">The Team</h2>
+                    </div>
+                    <div class="u-cell u-cell--rest index-team__list">
+                        <div class="index-team__item">
+                            <img class="index-team__image" src="/img/team-1.jpg" srcset="/img/team-1@2x.jpg 2x" alt="" role="presentation">
+                            <h4 class="index-team__name u-caption">Miro Pavletic</h4>
+                            <p class="index-team__description">A graduate of Kazakh National Pedagogical University Abai, Vyacheslav is currently working as&nbsp;freelance graphic designer and as a&nbsp;type designer for&nbsp;Brownfox</p>
                         </div>
-                        <div class="u-cell u-cell--rest index-team__list">
-                            <div class="index-team__item">
-                                <img class="index-team__image" src="/img/team-1.jpg" srcset="/img/team-1@2x.jpg 2x" alt="" role="presentation">
-                                <h4 class="index-team__name u-caption">Miro Pavletic</h4>
-                                <p class="index-team__description">A graduate of Kazakh National Pedagogical University Abai, Vyacheslav is currently working as&nbsp;freelance graphic designer and as a&nbsp;type designer for&nbsp;Brownfox</p>
-                            </div>
-                            <div class="index-team__item">
-                                <img class="index-team__image" src="/img/team-2.jpg" srcset="/img/team-2@2x.jpg 2x" alt="" role="presentation">
-                                <h4 class="index-team__name u-caption">Alicia Wilson</h4>
-                                <p class="index-team__description">Gayaneh has designed Cyrillic localizations for most major type libraries, including Linotype, Bitstream, The Font Bureau, ITC, Berthold, Typotheque, Emigre, and ParaType</p>
-                            </div>
-                            <div class="index-team__item">
-                                <img class="index-team__image" src="/img/team-3.jpg" srcset="/img/team-3@2x.jpg 2x" alt="" role="presentation">
-                                <h4 class="index-team__name u-caption">Chad Leger</h4>
-                                <p class="index-team__description">Originally from Finland, Lotta Nieminen studied graphic design and illustration at the University of Art and Design Helsinki and the Rhode Island School of Design, before founding her New York-based studio in 2012</p>
-                            </div>
-                            <div class="index-team__item">
-                                <img class="index-team__image" src="/img/team-4.jpg" srcset="/img/team-4@2x.jpg 2x" alt="" role="presentation">
-                                <h4 class="index-team__name u-caption">Nancy Woodster</h4>
-                                <p class="index-team__description">Gayaneh is the mastermind behind Serebro Nabora, a prominent annual international type conference held in Russia.</p>
-                            </div>
-                            <div class="index-team__item">
-                                <img class="index-team__image" src="/img/team-5.jpg" srcset="/img/team-5@2x.jpg 2x" alt="" role="presentation">
-                                <h4 class="index-team__name u-caption">Arthur Peterson</h4>
-                                <p class="index-team__description">The most important thing for us is to find a new, bright, compelling and unique character of typefaces. One of the challenges here is to stay within the group of typefaces, called workhorses, fonts that cover a broad range of application areas.</p>
-                            </div>
-                            <div class="index-team__item">
-                                <img class="index-team__image" src="/img/team-6.jpg" srcset="/img/team-6@2x.jpg 2x" alt="" role="presentation">
-                                <h4 class="index-team__name u-caption">Malcolm Franklin</h4>
-                                <p class="index-team__description">His work has been widely acclaimed, included in numerous international books and periodicals, and won an award from Granshan international type design competition, 2013.</p>
-                            </div>
+                        <div class="index-team__item">
+                            <img class="index-team__image" src="/img/team-2.jpg" srcset="/img/team-2@2x.jpg 2x" alt="" role="presentation">
+                            <h4 class="index-team__name u-caption">Alicia Wilson</h4>
+                            <p class="index-team__description">Gayaneh has designed Cyrillic localizations for most major type libraries, including Linotype, Bitstream, The Font Bureau, ITC, Berthold, Typotheque, Emigre, and ParaType</p>
+                        </div>
+                        <div class="index-team__item">
+                            <img class="index-team__image" src="/img/team-3.jpg" srcset="/img/team-3@2x.jpg 2x" alt="" role="presentation">
+                            <h4 class="index-team__name u-caption">Chad Leger</h4>
+                            <p class="index-team__description">Originally from Finland, Lotta Nieminen studied graphic design and illustration at the University of Art and Design Helsinki and the Rhode Island School of Design, before founding her New York-based studio in 2012</p>
+                        </div>
+                        <div class="index-team__item">
+                            <img class="index-team__image" src="/img/team-4.jpg" srcset="/img/team-4@2x.jpg 2x" alt="" role="presentation">
+                            <h4 class="index-team__name u-caption">Nancy Woodster</h4>
+                            <p class="index-team__description">Gayaneh is the mastermind behind Serebro Nabora, a prominent annual international type conference held in Russia.</p>
+                        </div>
+                        <div class="index-team__item">
+                            <img class="index-team__image" src="/img/team-5.jpg" srcset="/img/team-5@2x.jpg 2x" alt="" role="presentation">
+                            <h4 class="index-team__name u-caption">Arthur Peterson</h4>
+                            <p class="index-team__description">The most important thing for us is to find a new, bright, compelling and unique character of typefaces. One of the challenges here is to stay within the group of typefaces, called workhorses, fonts that cover a broad range of application areas.</p>
+                        </div>
+                        <div class="index-team__item">
+                            <img class="index-team__image" src="/img/team-6.jpg" srcset="/img/team-6@2x.jpg 2x" alt="" role="presentation">
+                            <h4 class="index-team__name u-caption">Malcolm Franklin</h4>
+                            <p class="index-team__description">His work has been widely acclaimed, included in numerous international books and periodicals, and won an award from Granshan international type design competition, 2013.</p>
                         </div>
                     </div>
                 </div>
             </div>
-
         </section>
+
+
+        {# media #}
+        <section class="section-media u-section u-container">
+            <div class="u-grid u-grid--vertical-margin u-show-fade" data-observe-show>
+                <div class="u-cell u-cell--first">
+                    <h2 class="">Media</h2>
+                </div>
+                <div class="u-cell u-cell--rest section-media__list">
+                    <div class="section-media__item">
+                        <img class="section-media__image" src="/img/media-cnet.svg" alt="CNET">
+                    </div>
+                    <div class="section-media__item">
+                        <img class="section-media__image" src="/img/media-tc.png" srcset="/img/media-tc@2x.png 2x" alt="TechCrunch">
+                    </div>
+                    <div class="section-media__item">
+                        <img class="section-media__image" src="/img/media-cnn.svg" alt="CNN">
+                    </div>
+                    <div class="section-media__item">
+                        <img class="section-media__image" src="/img/media-verge.png" srcset="/img/media-verge@2x.png 2x" alt="The Verge">
+                    </div>
+                    <div class="section-media__item">
+                        <img class="section-media__image" src="/img/media-gizmodo.svg" alt="Gizmodo">
+                    </div>
+                    <div class="section-media__item-divider u-hidden-xmedium-down"></div>
+                    <div class="section-media__item">
+                        <img class="section-media__image" src="/img/media-readwrite.svg" alt="ReadWrite">
+                    </div>
+                    <div class="section-media__item">
+                        <img class="section-media__image" src="/img/media-techradar.svg" alt="TechRadar">
+                    </div>
+                    <div class="section-media__item">
+                        <img class="section-media__image" src="/img/media-mashable.svg" alt="Mashable">
+                    </div>
+                    <div class="section-media__item">
+                        <img class="section-media__image" src="/img/media-engadget.png" srcset="/img/media-engadget@2x.png 2x" alt="Engadget">
+                    </div>
+                </div>
+            </div>
+        </section>
+
 
 
     </article>
