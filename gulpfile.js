@@ -7,10 +7,12 @@ const beeper = require('beeper');
 // templates
 const nunjucks = require('gulp-nunjucks-render');
 const cacheBust = require('gulp-cache-bust');
+const data = require('gulp-data');
 // js
 const webpack = require('webpack');
 const webpackStream = require('webpack-stream');
 const webpackConfig = require('./webpack.config.js');
+const named = require('vinyl-named');
 // css
 const less = require('gulp-less');
 const postcss = require('gulp-postcss');
@@ -80,6 +82,7 @@ gulp.task('less', function () {
 gulp.task('js', function() {
     return gulp.src(paths.src.js)
         .pipe(plumber({errorHandler: onError}))
+        .pipe(named())
         .pipe(webpackStream(webpackConfig, webpack))
         .pipe(rename({
             suffix: '.min'
@@ -92,6 +95,13 @@ gulp.task('js', function() {
 gulp.task('templates', function () {
     return gulp.src(paths.src.templatesFiles)
         .pipe(plumber({errorHandler: onError}))
+        .pipe(named())
+        .pipe(data(function getDataForFile(file) {
+            return {
+                __filePath__: file.relative,
+                __fileName__: file.named,
+            };
+        }))
         .pipe(nunjucks({
             path: paths.src.templatesDir,
             ext: '.html',

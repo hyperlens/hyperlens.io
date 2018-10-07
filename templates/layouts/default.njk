@@ -24,7 +24,10 @@
     {% include 'layouts/_footer.njk' %}
 </div>
 
-<script src="{{ url_prefix }}js/main.min.js"></script>
+{% block scripts %}
+    <script src="{{ url_prefix }}js/common.min.js"></script>
+{% endblock %}
+
 
 {% include 'layouts/_seo-gtag.njk' %}
 </body>
