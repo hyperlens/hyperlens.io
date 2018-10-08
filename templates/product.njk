@@ -1,0 +1,169 @@
+{% extends "layouts/default.njk" %}
+{% set page_title = "" %}
+{% set page_description = "" %}
+{% set body_class = "u-bg--gray" %}
+
+{% block content %}
+
+
+    <article class="main-inner">
+        <section class="intro u-container" data-observe-bg="gray" data-observe-threshold="0.40">
+            <div class="intro__inner">
+                <div class="intro__center">
+                    <div class="intro__video-wrap">
+                        <video class="intro__video" preload="auto" muted loop data-intro-video data-observe-play="disabled">
+                            <source src="{{ url_prefix }}video/index-intro.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <h1 class="intro__title u-title">making the technology easily accessible to everyone <br>
+                        使每个人都能轻松访问该技术</h1>
+                </div>
+            </div>
+        </section>
+
+        {# product #}
+        <section class="u-section u-container">
+            <div class="u-grid u-grid--vertical-margin">
+                <div class="u-cell u-cell--first u-show-fade" data-observe-show>
+                    <h2 class="u-sticky">Product</h2>
+                </div>
+                <div class="u-cell u-cell--rest">
+                    <div class="u-section__part u-grid u-grid--vertical-margin u-grid--inner u-show-fade" data-observe-show>
+                        <div class="u-cell u-cell--rest-second">
+                            <h3 class="u-caption">Next Platform <br>in the AR world</h3>
+                        </div>
+                        <div class="u-cell u-cell--rest-third">
+                            The AR world will revolutionise the way you communicate and play. Using the camera as a platform makes the technology easily accessible to everyone, and creates a clear shift towards spatial computing. <br>Forward thinking businesses will quickly adopt AR to improve their customers’ experience. You’ll be able to look up a dish directly from a restaurant’s menu and see other customers’ ratings. Everyday tasks, like updating your calendar, making a call, translating words, or getting directions, will all become quicker and more intuitive.
+                        </div>
+                    </div>
+                    <p class="u-caption u-section__part--large">The physical world will become a treasure trove of information. Whether you’re visiting popular landmarks or wondering what a specific plant is, the answer will be in front of your eyes. Searching for specific items, such as clothes or furniture, will be easier as the physical item becomes your search. The increased access to information will act as a guide to reality, customised by your own preferences. No longer needing to switch attention between a screen and the physical world makes interactions feel intuitive. The use of APIs and decentralisation ensures the platform’s openness, and helps to maintain the community driven control.</p>
+                </div>
+            </div>
+        </section>
+
+        {# features #}
+        <section class="u-container u-section index-industry-content" data-observe-bg="gray" data-observe-threshold="0.02">
+            <div class="u-grid u-grid--vertical-margin">
+                <div class="u-cell u-cell--first u-show-fade" data-observe-show>
+                    <h2 class="u-sticky">Features</h2>
+                </div>
+                <div class="u-cell u-cell--rest">
+
+                </div>
+            </div>
+        </section>
+
+        {# use cases #}
+        <section class="u-section u-container">
+            <div class="u-grid u-grid--vertical-margin">
+                <div class="u-cell u-cell--first--t2 u-show-fade" data-observe-show>
+                    <h2 class="u-sticky">Use cases</h2>
+                </div>
+                <div class="u-cell u-cell--rest--t2">
+                    <div class="index-case__list u-grid u-grid--vertical-margin--large u-show-fade" data-observe-show data-use-case-list>
+                        <div class="u-cell u-cell--rest-second--t2">
+                            <div class="index-case__item">
+                                <img class="index-case__media" src="{{ url_prefix }}img/case1.jpg" srcset="{{ url_prefix }}img/case1@2x.jpg 2x" alt="">
+                                <h3 class="index-case__title u-caption">Basic lense: <br class="u-hidden-small-down">tokens, augmented&nbsp;objects</h3>
+                                <p class="index-case__description u-hidden-large-down">Earn and use tokens to create your unique reality.</p>
+                            </div>
+                        </div>
+                        <div class="u-cell u-cell--rest-third--t2">
+                            <div class="index-case__item" data-rellax-speed="14">
+                                <img class="index-case__media" src="{{ url_prefix }}img/case2.jpg" srcset="{{ url_prefix }}img/case2@2x.jpg 2x" alt="">
+                                <h3 class="index-case__title u-caption">Information lense</h3>
+                                <p class="index-case__description u-hidden-large-down">Earn and use tokens to create your unique reality.</p>
+                            </div>
+                        </div>
+                        <div class="u-cell u-cell--rest-second--t2">
+                            <div class="index-case__item">
+                                <img class="index-case__media" src="{{ url_prefix }}img/case3.jpg" srcset="{{ url_prefix }}img/case3@2x.jpg 2x" alt="">
+                                <h3 class="index-case__title u-caption">Business <br>and marketing lense</h3>
+                                <p class="index-case__description u-hidden-large-down">Earn and use tokens to create your unique reality.</p>
+                            </div>
+                        </div>
+                        <div class="u-cell u-cell--rest-third--t2">
+                            <div class="index-case__item" data-rellax-speed="14">
+                                <img class="index-case__media" src="{{ url_prefix }}img/case4.jpg" srcset="{{ url_prefix }}img/case4@2x.jpg 2x" alt="">
+                                <h3 class="index-case__title u-caption">Art lense: <br>augmented exhibition</h3>
+                                <p class="index-case__description u-hidden-large-down">Earn and use tokens to create your unique reality.</p>
+                            </div>
+                        </div>
+                        <div class="u-cell u-cell--rest-second--t2">
+                            <div class="index-case__item">
+                                <img class="index-case__media" src="{{ url_prefix }}img/case5.jpg" srcset="{{ url_prefix }}img/case5@2x.jpg 2x" alt="">
+                                <h3 class="index-case__title u-caption">Games lense: <br>cyberpunk playground</h3>
+                                <p class="index-case__description u-hidden-large-down">Earn and use tokens to create your unique reality.</p>
+                            </div>
+                        </div>
+                        <div class="u-cell u-cell--rest-third--t2">
+                            <div class="index-case__item" data-rellax-speed="14">
+                                <img class="index-case__media" src="{{ url_prefix }}img/case6.jpg" srcset="{{ url_prefix }}img/case6@2x.jpg 2x" alt="">
+                                <h3 class="index-case__title u-caption">Travel lense</h3>
+                                <p class="index-case__description u-hidden-large-down">Earn and use tokens to create your unique reality.</p>
+                            </div>
+                        </div>
+                        {#<div class="u-cell u-cell--rest-second--t2"></div>#}
+                        <div class="u-cell u-cell--rest-third--t2">
+                            <div class="index-case__item" data-rellax-speed="14">
+                                <img class="index-case__media" src="{{ url_prefix }}img/case7.jpg" srcset="{{ url_prefix }}img/case7@2x.jpg 2x" alt="">
+                                <h3 class="index-case__title u-caption">Productivity lense</h3>
+                                <p class="index-case__description u-hidden-large-down">Earn and use tokens to create your unique reality.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+        {# media #}
+        <section class="section-media u-section u-container" data-observe-bg="gray" data-observe-threshold="0.02">
+            <div class="u-grid u-grid--vertical-margin u-show-fade" data-observe-show>
+                <div class="u-cell u-cell--first">
+                    <h2 class="">Media</h2>
+                </div>
+                <div class="u-cell u-cell--rest section-media__list">
+                    <div class="section-media__item">
+                        <img class="section-media__image" src="{{ url_prefix }}img/media-cnet.svg" alt="CNET">
+                    </div>
+                    <div class="section-media__item">
+                        <img class="section-media__image" src="{{ url_prefix }}img/media-tc.png" srcset="{{ url_prefix }}img/media-tc@2x.png 2x" alt="TechCrunch">
+                    </div>
+                    <div class="section-media__item">
+                        <img class="section-media__image" src="{{ url_prefix }}img/media-cnn.svg" alt="CNN">
+                    </div>
+                    <div class="section-media__item">
+                        <img class="section-media__image" src="{{ url_prefix }}img/media-verge.png" srcset="{{ url_prefix }}img/media-verge@2x.png 2x" alt="The Verge">
+                    </div>
+                    <div class="section-media__item">
+                        <img class="section-media__image" src="{{ url_prefix }}img/media-gizmodo.svg" alt="Gizmodo">
+                    </div>
+                    <div class="section-media__item-divider u-hidden-xmedium-down"></div>
+                    <div class="section-media__item">
+                        <img class="section-media__image" src="{{ url_prefix }}img/media-readwrite.svg" alt="ReadWrite">
+                    </div>
+                    <div class="section-media__item">
+                        <img class="section-media__image" src="{{ url_prefix }}img/media-techradar.svg" alt="TechRadar">
+                    </div>
+                    <div class="section-media__item">
+                        <img class="section-media__image" src="{{ url_prefix }}img/media-mashable.svg" alt="Mashable">
+                    </div>
+                    <div class="section-media__item">
+                        <img class="section-media__image" src="{{ url_prefix }}img/media-engadget.png" srcset="{{ url_prefix }}img/media-engadget@2x.png 2x" alt="Engadget">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </article>
+{% endblock %}
+
+
+{% block scripts %}
+    {{ super() }}
+    <script src="{{ url_prefix }}js/product.min.js"></script>
+{% endblock %}
