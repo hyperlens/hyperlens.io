@@ -12,8 +12,10 @@ export default function initIntro() {
         videoEl.play();
     }, INITIAL_ANIMATION_TIME);
 
-    watchButtonEl.addEventListener('click', toggleZoom);
-    videoEl.addEventListener('click', toggleZoom);
+    if (watchButtonEl) {
+        watchButtonEl.addEventListener('click', toggleZoom);
+        videoEl.addEventListener('click', toggleZoom);
+    }
 
     const $videoEl = $(videoEl);
     initTilt();
