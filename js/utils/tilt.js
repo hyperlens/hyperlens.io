@@ -36,10 +36,11 @@ $.fn.tilt = function (options) {
          * @type {*}
          */
         this.settings = $.extend({
-            maxTilt: $this.is('[data-tilt-max]') ? $this.data('tilt-max') : 20,
+            maxTiltX: $this.is('[data-tilt-max]') ? $this.data('tilt-max') : 15,
+            maxTiltY: $this.is('[data-tilt-max]') ? $this.data('tilt-max') : 22,
             perspective: $this.is('[data-tilt-perspective]') ? $this.data('tilt-perspective') : 600,
             easing: $this.is('[data-tilt-easing]') ? $this.data('tilt-easing') : 'ease',
-            speed: $this.is('[data-tilt-speed]') ? $this.data('tilt-speed') : 150,
+            speed: $this.is('[data-tilt-speed]') ? $this.data('tilt-speed') : 100,
             transition: $this.is('[data-tilt-transition]') ? $this.data('tilt-transition') : true,
         }, options);
 
@@ -165,8 +166,8 @@ $.fn.tilt = function (options) {
                 percentageY = 0.9 * 2 - percentageY;
             }
             // x or y position inside instance / width of instance = percentage of position inside instance * the max tilt value
-            const tiltX = ((percentageX - 0.5) * _this.settings.maxTilt).toFixed(2);
-            const tiltY = ((0.5 - percentageY) * _this.settings.maxTilt).toFixed(2);
+            const tiltX = ((percentageX - 0.5) * _this.settings.maxTiltX).toFixed(2);
+            const tiltY = ((0.5 - percentageY) * _this.settings.maxTiltY).toFixed(2);
             // angle
             const angle = Math.atan2(_this.mousePositions.x - (left+width/2),- (_this.mousePositions.y - (top+height/2)) )*(180/Math.PI);
             // Return x & y tilt values

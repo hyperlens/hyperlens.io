@@ -47,7 +47,9 @@ export default function initIntro() {
 
         videoEl.removeEventListener(support.transition.end, handleZoomOutEnd); // clear, in case of zoomIn before zoomOut end
 
-        const {top, left, width, height} = videoEl.parentNode.getBoundingClientRect(); // compute parent, bc. element itself can be transformed by tilt
+        const {top, bottom, left, right} = videoEl.parentNode.getBoundingClientRect(); // compute parent, bc. element itself can be transformed by tilt
+        const width = right - left;
+        const height = bottom - top;
         const viewportWidth  = document.documentElement.clientWidth;
         const viewportHeight  = document.documentElement.clientHeight;
         const scaleX = viewportWidth / width;

@@ -1,8 +1,11 @@
 import initUseCases from './include/use-cases';
-import DragScroll from './include/dragscroll';
+// import DragScroll from './include/dragscroll';
 import initIntro from './include/intro';
+import initHorizontal from './include/horizontal-scroll';
 
 
 initUseCases();
-new DragScroll('[data-dragscroll]');
+// dragscroll replaced with horizontal scroll
+// new DragScroll('[data-dragscroll]');
 initIntro();
+initHorizontal();
