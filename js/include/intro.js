@@ -9,7 +9,9 @@ export default function initIntro() {
     setTimeout(() => {
         // enable play observer by removing `disabled` attr value
         videoEl.setAttribute('data-observe-play', '');
-        videoEl.play();
+        if (videoEl.__videoControl) {
+            videoEl.__videoControl.play();
+        }
     }, INITIAL_ANIMATION_TIME);
 
     if (watchButtonEl) {

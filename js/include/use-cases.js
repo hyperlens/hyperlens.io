@@ -1,12 +1,29 @@
 import debounce from 'lodash-es/debounce'
 import Rellax from 'rellax';
 import DragScroll from './dragscroll';
+import VideoControl from '../utils/video-control';
 
 let rellax;
 let dragScroll;
 
 export default function initUseCases() {
     let isLastDesktop;
+    // document.querySelectorAll('[data-use-case-video]').forEach((videoEl) => {
+    //     new VideoControl(videoEl);
+    // });
+
+    document.querySelectorAll('[data-use-case-item]').forEach((itemEl) => {
+        const videoEl = itemEl.querySelector('[data-use-case-video]');
+        if (videoEl) {
+            const videoControl = new VideoControl(videoEl);
+            itemEl.addEventListener('mouseenter', () => {
+                videoControl.play();
+            });
+            itemEl.addEventListener('mouseleave', () => {
+                videoControl.pause();
+            });
+        }
+    });
 
     // init depends on window size
     if (checkDesktop()) {

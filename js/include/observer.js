@@ -1,4 +1,5 @@
 import 'intersection-observer';
+import VideoControl from '../utils/video-control';
 
 // @TODO replace with web.dom-collections.for-each after core-js@3 release
 // or it will be replaced with babel's `useBuiltIns: "usage"`
@@ -26,6 +27,13 @@ const bgFlags = {
 
 export default function initObserver() {
     const observables = document.querySelectorAll('[data-observe-show], [data-observe-bg], [data-observe-play]');
+
+    // init VideoControl on video observables
+    observables.forEach((element) => {
+       if (element.getAttribute('data-observe-play') !== null) {
+           new VideoControl(element);
+       }
+    });
 
     // collect thresholds to observe from all observable elements
     let thresholdsToObserve = [0];
@@ -86,15 +94,11 @@ export default function initObserver() {
         // data-observe-play
         if (playAttr !== null && entry.intersectionRatio > threshold) {
             if (playAttr !== 'disabled') {
-                entry.target.autoplay = true;
-                if (entry.target.readyState === 4) {
-                    entry.target.play();
-                }
+                entry.target.__videoControl.play();
             }
         }
         if (playAttr !== null && entry.intersectionRatio <= threshold) {
-            entry.target.autoplay = false;
-            entry.target.pause();
+            entry.target.__videoControl.pause();
         }
     }
 }

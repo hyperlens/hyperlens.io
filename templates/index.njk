@@ -98,79 +98,7 @@
             </div>
 
             <div class="u-section__part u-section__part--large">
-                <div class="u-grid u-grid--vertical-margin">
-                    <div class="u-cell u-cell--first--t2 u-show-fade" data-observe-show>
-                        <h2 class="u-sticky">Use cases</h2>
-                    </div>
-                    <div class="u-cell u-cell--rest--t2">
-                        <div class="index-case__list u-grid u-grid--vertical-margin--large u-show-fade" data-observe-show data-use-case-list>
-                            <div class="u-cell u-cell--rest-second--t2">
-                                <div class="index-case__item">
-                                    <figure class="index-case__media u-aspect-ratio" style="--aspect-ratio:594/330;">
-                                        <img class="index-case__media" src="{{ url_prefix }}img/case1.jpg" srcset="{{ url_prefix }}img/case1@2x.jpg 2x" width="594" height="330" alt="" role="presentation">
-                                    </figure>
-                                    <h3 class="index-case__title u-caption">Basic lense: <br class="u-hidden-small-down">tokens, augmented&nbsp;objects</h3>
-                                    <p class="index-case__description u-hidden-large-down">Earn and use tokens to create your unique reality.</p>
-                                </div>
-                            </div>
-                            <div class="u-cell u-cell--rest-third--t2">
-                                <div class="index-case__item" data-rellax-speed="14">
-                                    <figure class="index-case__media u-aspect-ratio" style="--aspect-ratio:594/330;">
-                                        <img class="index-case__media" src="{{ url_prefix }}img/case2.jpg" srcset="{{ url_prefix }}img/case2@2x.jpg 2x" width="594" height="330" alt="" role="presentation">
-                                    </figure>
-                                    <h3 class="index-case__title u-caption">Information lense</h3>
-                                    <p class="index-case__description u-hidden-large-down">Earn and use tokens to create your unique reality.</p>
-                                </div>
-                            </div>
-                            <div class="u-cell u-cell--rest-second--t2">
-                                <div class="index-case__item">
-                                    <figure class="index-case__media u-aspect-ratio" style="--aspect-ratio:594/330;">
-                                        <img class="index-case__media" src="{{ url_prefix }}img/case3.jpg" srcset="{{ url_prefix }}img/case3@2x.jpg 2x" width="594" height="330" alt="" role="presentation">
-                                    </figure>
-                                    <h3 class="index-case__title u-caption">Business <br>and marketing lense</h3>
-                                    <p class="index-case__description u-hidden-large-down">Earn and use tokens to create your unique reality.</p>
-                                </div>
-                            </div>
-                            <div class="u-cell u-cell--rest-third--t2">
-                                <div class="index-case__item" data-rellax-speed="14">
-                                    <figure class="index-case__media u-aspect-ratio" style="--aspect-ratio:594/330;">
-                                        <img class="index-case__media" src="{{ url_prefix }}img/case4.jpg" srcset="{{ url_prefix }}img/case4@2x.jpg 2x" width="594" height="330" alt="" role="presentation">
-                                    </figure>
-                                    <h3 class="index-case__title u-caption">Art lense: <br>augmented exhibition</h3>
-                                    <p class="index-case__description u-hidden-large-down">Earn and use tokens to create your unique reality.</p>
-                                </div>
-                            </div>
-                            <div class="u-cell u-cell--rest-second--t2">
-                                <div class="index-case__item">
-                                    <figure class="index-case__media u-aspect-ratio" style="--aspect-ratio:594/330;">
-                                        <img class="index-case__media" src="{{ url_prefix }}img/case5.jpg" srcset="{{ url_prefix }}img/case5@2x.jpg 2x" width="594" height="330" alt="" role="presentation">
-                                    </figure>
-                                    <h3 class="index-case__title u-caption">Games lense: <br>cyberpunk playground</h3>
-                                    <p class="index-case__description u-hidden-large-down">Earn and use tokens to create your unique reality.</p>
-                                </div>
-                            </div>
-                            <div class="u-cell u-cell--rest-third--t2">
-                                <div class="index-case__item" data-rellax-speed="14">
-                                    <figure class="index-case__media u-aspect-ratio" style="--aspect-ratio:594/330;">
-                                        <img class="index-case__media" src="{{ url_prefix }}img/case6.jpg" srcset="{{ url_prefix }}img/case6@2x.jpg 2x" width="594" height="330" alt="" role="presentation">
-                                    </figure>
-                                    <h3 class="index-case__title u-caption">Travel lense</h3>
-                                    <p class="index-case__description u-hidden-large-down">Earn and use tokens to create your unique reality.</p>
-                                </div>
-                            </div>
-                            {#<div class="u-cell u-cell--rest-second--t2"></div>#}
-                            <div class="u-cell u-cell--rest-third--t2">
-                                <div class="index-case__item" data-rellax-speed="14">
-                                    <figure class="index-case__media u-aspect-ratio" style="--aspect-ratio:594/330;">
-                                        <img class="index-case__media" src="{{ url_prefix }}img/case7.jpg" srcset="{{ url_prefix }}img/case7@2x.jpg 2x" width="594" height="330" alt="" role="presentation">
-                                    </figure>
-                                    <h3 class="index-case__title u-caption">Productivity lense</h3>
-                                    <p class="index-case__description u-hidden-large-down">Earn and use tokens to create your unique reality.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                {% include 'partials/use-cases.njk' %}
             </div>
         </section>
 
@@ -520,43 +448,7 @@
 
 
         {# media #}
-        <section class="section-media u-section u-container" data-observe-bg="gray" data-observe-threshold="0.02">
-            <div class="u-grid u-grid--vertical-margin u-show-fade" data-observe-show>
-                <div class="u-cell u-cell--first">
-                    <h2 class="">Media</h2>
-                </div>
-                <div class="u-cell u-cell--rest section-media__list">
-                    <div class="section-media__item">
-                        <img class="section-media__image" src="{{ url_prefix }}img/media-cnet.svg" alt="CNET">
-                    </div>
-                    <div class="section-media__item">
-                        <img class="section-media__image" src="{{ url_prefix }}img/media-tc.png" srcset="{{ url_prefix }}img/media-tc@2x.png 2x" alt="TechCrunch">
-                    </div>
-                    <div class="section-media__item">
-                        <img class="section-media__image" src="{{ url_prefix }}img/media-cnn.svg" alt="CNN">
-                    </div>
-                    <div class="section-media__item">
-                        <img class="section-media__image" src="{{ url_prefix }}img/media-verge.png" srcset="{{ url_prefix }}img/media-verge@2x.png 2x" alt="The Verge">
-                    </div>
-                    <div class="section-media__item">
-                        <img class="section-media__image" src="{{ url_prefix }}img/media-gizmodo.svg" alt="Gizmodo">
-                    </div>
-                    <div class="section-media__item-divider u-hidden-xmedium-down"></div>
-                    <div class="section-media__item">
-                        <img class="section-media__image" src="{{ url_prefix }}img/media-readwrite.svg" alt="ReadWrite">
-                    </div>
-                    <div class="section-media__item">
-                        <img class="section-media__image" src="{{ url_prefix }}img/media-techradar.svg" alt="TechRadar">
-                    </div>
-                    <div class="section-media__item">
-                        <img class="section-media__image" src="{{ url_prefix }}img/media-mashable.svg" alt="Mashable">
-                    </div>
-                    <div class="section-media__item">
-                        <img class="section-media__image" src="{{ url_prefix }}img/media-engadget.png" srcset="{{ url_prefix }}img/media-engadget@2x.png 2x" alt="Engadget">
-                    </div>
-                </div>
-            </div>
-        </section>
+        {% include 'partials/media.njk' %}
 
     </article>
 {% endblock %}

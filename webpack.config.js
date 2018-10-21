@@ -8,6 +8,29 @@ let config = {
     output: {
         filename: '[name].js',
     },
+    optimization: {
+        splitChunks: {
+            cacheGroups: {
+                // commons: {
+                //     // use common.js as common chunk
+                //     name: 'common',
+                //     chunks: "initial",
+                //     minChunks: 2,
+                //     maxInitialRequests: 5, // The default limit is too small to showcase the effect
+                //     minSize: 0, // This is example is too small to create commons chunks
+                //     enforce: true,
+                // },
+                vendor: {
+                    test: /node_modules/,
+                    minChunks: 2,
+                    chunks: "initial",
+                    name: "vendor",
+                    // priority: 10,
+                    // enforce: true
+                }
+            }
+        }
+    },
     resolve: {
         alias: {
             // 'swiper$': 'swiper/dist/js/swiper.jquery.js',
