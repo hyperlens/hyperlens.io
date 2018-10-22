@@ -16,15 +16,17 @@ export default function VideoControl(el) {
     }
 
     let interval;
+    let isEnabled = true;
 
     this.play = function () {
-        el.autoplay = true;
-        if (el.readyState === 4) {
+        if (isEnabled && el.readyState === 4) {
+            el.autoplay = true;
             el.play();
         } else {
             clearInterval(interval);
             interval = setInterval(() => {
-                if (el.readyState === 4) {
+                if (isEnabled && el.readyState === 4) {
+                    el.autoplay = true;
                     el.play();
                     clearInterval(interval);
                 }
@@ -36,6 +38,14 @@ export default function VideoControl(el) {
         el.autoplay = false;
         el.pause();
         clearInterval(interval);
+    };
+
+    this.enable = function() {
+        isEnabled = true;
+    };
+
+    this.disable = function() {
+        isEnabled = false;
     };
 
     el.__videoControl = this;

@@ -44,12 +44,15 @@ export default function initObserver() {
         }
     });
 
+    const headerHeight = getComputedStyle(document.documentElement).getPropertyValue('--header-height');
+
     // init observer
     const observer = new IntersectionObserver((entries) => {
         // console.log(entries)
         entries.forEach(handleIntersection);
     }, {
         threshold: thresholdsToObserve,
+        rootMargin: `-${headerHeight} 0px 0px`,
     });
     observables.forEach((element) => observer.observe(element));
 
@@ -60,10 +63,10 @@ export default function initObserver() {
      */
     function handleIntersection(entry) {
         const threshold = entry.target.getAttribute('data-observe-threshold') || 0;
-        // data-observe-show
         const showAttr = entry.target.getAttribute('data-observe-show');
         const bgAttr = entry.target.getAttribute('data-observe-bg');
         const playAttr = entry.target.getAttribute('data-observe-play');
+        // data-observe-show
         if (showAttr !== null && entry.intersectionRatio > threshold) {
             entry.target.classList.add('is-showed');
             if (showAttr) {
@@ -93,9 +96,10 @@ export default function initObserver() {
         }
         // data-observe-play
         if (playAttr !== null && entry.intersectionRatio > threshold) {
-            if (playAttr !== 'disabled') {
-                entry.target.__videoControl.play();
+            if (playAttr === 'disabled') {
+                entry.target.__videoControl.disable();
             }
+            entry.target.__videoControl.play();
         }
         if (playAttr !== null && entry.intersectionRatio <= threshold) {
             entry.target.__videoControl.pause();

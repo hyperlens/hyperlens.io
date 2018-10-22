@@ -7,11 +7,12 @@
 
 
     <article class="main-inner">
-        <section class="intro u-container" data-observe-bg="black" data-observe-threshold="0.40">
+        <section class="intro u-container" data-observe-bg="black" data-observe-threshold="0.25">
             <div class="intro__inner intro__inner--index">
                 <div class="intro__center">
                     <div class="intro__video-wrap">
-                        <video class="intro__video" preload="auto" muted loop data-intro-video data-observe-play="disabled">
+                        <video class="intro__video" preload="auto" loop data-intro-video data-observe-play="disabled">
+                            <source src="{{ url_prefix }}video/index-intro.webm" type="video/webm">
                             <source src="{{ url_prefix }}video/index-intro.mp4" type="video/mp4">
                         </video>
                     </div>
