@@ -10,11 +10,20 @@
         <section class="intro u-container" data-observe-bg="black" data-observe-threshold="0.25">
             <div class="intro__inner intro__inner--index">
                 <div class="intro__center">
-                    <div class="intro__video-wrap">
-                        <video class="intro__video" preload="auto" loop data-intro-video data-observe-play="disabled">
-                            <source src="{{ url_prefix }}video/index-intro.webm" type="video/webm">
-                            <source src="{{ url_prefix }}video/index-intro.mp4" type="video/mp4">
-                        </video>
+                    <div class="intro__video-wrap-outer"> {# el to calculate actual size #}
+                        <div class="intro__video-wrap-inner" data-intro-video-inner> {# el to apply transforms #}
+                            <video class="intro__video intro__video--main" preload="auto" data-intro-video>
+                                <source src="{{ url_prefix }}video/index-intro.webm" type="video/webm">
+                                <source src="{{ url_prefix }}video/index-intro.mp4" type="video/mp4">
+                            </video>
+                            {#<button class="intro__video-close is-active u-semantic-button" data-intro-close>
+                                <span class="header__offcanvas-icon">Menu</span>
+                            </button>#}
+                            <video class="intro__video intro__video--preview" preload="auto" loop data-intro-video-preview data-observe-play="disabled">
+                                <source src="{{ url_prefix }}video/case1.webm" type="video/webm">
+                                <source src="{{ url_prefix }}video/case1.mp4" type="video/mp4">
+                            </video>
+                        </div>
                     </div>
                     <h1 class="intro__title u-title">Reality is about <br>
                         to get a lot more exciting <br>
@@ -298,7 +307,8 @@
         <section class="index-technology u-container" data-observe-bg="black" data-observe-threshold="0.25">
             <div class="index-technology__video-section u-section">
                 <video class="index-technology__video" preload="auto" muted loop data-intro-video data-observe-show data-observe-play>
-                    <source src="{{ url_prefix }}video/index-intro.mp4" type="video/mp4">
+                    <source src="{{ url_prefix }}video/case1.webm" type="video/webm">
+                    <source src="{{ url_prefix }}video/case1.mp4" type="video/mp4">
                 </video>
             </div>
 

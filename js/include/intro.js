@@ -4,23 +4,27 @@ import '../utils/tilt';
 const INITIAL_ANIMATION_TIME = 3000;
 
 export default function initIntro() {
+    const videoInnerEl = document.querySelector('[data-intro-video-inner]');
     const videoEl = document.querySelector('[data-intro-video]');
+    const videoPreviewEl = document.querySelector('[data-intro-video-preview]');
     const watchButtonEl = document.querySelector('[data-intro-watch]');
+    // const closeButtonEl = document.querySelector('[data-intro-close]');
     setTimeout(() => {
         videoEl.volume = 0.5;
         // enable play observer by removing `disabled` attr value
-        videoEl.setAttribute('data-observe-play', '');
-        if (videoEl.__videoControl) {
-            videoEl.__videoControl.enable();
+        videoPreviewEl.setAttribute('data-observe-play', '');
+        if (videoPreviewEl.__videoControl) {
+            videoPreviewEl.__videoControl.enable();
         }
     }, INITIAL_ANIMATION_TIME);
 
     if (watchButtonEl) {
-        watchButtonEl.addEventListener('click', toggleZoom);
-        videoEl.addEventListener('click', toggleZoom);
+        watchButtonEl.addEventListener('click', zoomIn);
+        videoInnerEl.addEventListener('click', toggleZoom);
+        // closeButtonEl.addEventListener('click', zoomOut);
     }
 
-    const $videoEl = $(videoEl);
+    const $videoTiltEl = $(videoInnerEl);
     initTilt();
 
 
@@ -42,15 +46,15 @@ export default function initIntro() {
     }
 
     function zoomIn() {
-        if (isDelayed) {
+        if (isZoomed || isDelayed) {
             return;
         }
         setDelay();
         isZoomed = true;
 
-        videoEl.removeEventListener(support.transition.end, handleZoomOutEnd); // clear, in case of zoomIn before zoomOut end
+        videoInnerEl.removeEventListener(support.transition.end, handleZoomOutEnd); // clear, in case of zoomIn before zoomOut end
 
-        const {top, bottom, left, right} = videoEl.parentNode.getBoundingClientRect(); // compute parent, bc. element itself can be transformed by tilt
+        const {top, bottom, left, right} = videoInnerEl.parentNode.getBoundingClientRect(); // compute parent, bc. element itself can be transformed by tilt
         const width = right - left;
         const height = bottom - top;
         const viewportWidth  = document.documentElement.clientWidth;
@@ -62,7 +66,10 @@ export default function initIntro() {
         const translateY = -top + (viewportHeight - height) / 2;
         document.body.classList.add('is-intro-zoom-in'); // add transition
         destroyTilt(); // remove tilt stiles
-        videoEl.style.transform = `translate(${translateX}px, ${translateY}px) scale(${scale})`; // add zoom styles
+        videoInnerEl.style.transform = `translate(${translateX}px, ${translateY}px) scale(${scale})`; // add zoom styles
+
+        videoPreviewEl.__videoControl.pause();
+        videoEl.play();
 
         window.addEventListener('scroll', zoomOut, support.passiveListener ? {passive: true} : false);
         window.addEventListener('resize', zoomOut);
@@ -71,22 +78,25 @@ export default function initIntro() {
     }
 
     function zoomOut() {
-        if (isDelayed) {
+        if (!isZoomed || isDelayed) {
             return;
         }
         setDelay();
         isZoomed = false;
 
-        videoEl.style.transform = '';
+        videoInnerEl.style.transform = '';
         document.body.classList.remove('is-intro-zoom-in');
         document.body.classList.add('is-intro-zoom-out');
+
+        videoPreviewEl.__videoControl.play();
+        videoEl.pause();
 
         window.removeEventListener('scroll', zoomOut);
         window.removeEventListener('resize', zoomOut);
         document.removeEventListener('click', handleOuterClick);
         document.removeEventListener('keyup', handleEsc);
 
-        videoEl.addEventListener(support.transition.end, handleZoomOutEnd);
+        videoInnerEl.addEventListener(support.transition.end, handleZoomOutEnd);
     }
 
     function handleOuterClick(e) {
@@ -103,17 +113,17 @@ export default function initIntro() {
 
     function handleZoomOutEnd() {
         document.body.classList.remove('is-intro-zoom-out');
-        videoEl.removeEventListener(support.transition.end, handleZoomOutEnd);
+        videoInnerEl.removeEventListener(support.transition.end, handleZoomOutEnd);
         initTilt();
     }
 
 
     function initTilt() {
-        $videoEl.tilt();
+        $videoTiltEl.tilt();
     }
 
     function destroyTilt() {
-        $videoEl.tilt.destroy.call($videoEl);
+        $videoTiltEl.tilt.destroy.call($videoTiltEl);
     }
 }
 
