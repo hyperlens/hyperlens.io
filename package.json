@@ -10,7 +10,7 @@
     "build": "cross-env NODE_ENV=production node ./node_modules/gulp/bin/gulp.js once",
     "analyze": "cross-env NODE_ENV=production cross-env WEBPACK_ENV=analyze node node_modules/gulp/bin/gulp.js js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "surge": "surge ./public hl-demo.surge.sh"
+    "surge": "npm run production && surge ./public hl-demo.surge.sh"
   },
   "repository": "",
   "author": "shrpne",

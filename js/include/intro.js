@@ -10,7 +10,9 @@ export default function initIntro() {
     const watchButtonEl = document.querySelector('[data-intro-watch]');
     // const closeButtonEl = document.querySelector('[data-intro-close]');
     setTimeout(() => {
-        videoEl.volume = 0.5;
+        if (videoEl) {
+            videoEl.volume = 0.5;
+        }
         // enable play observer by removing `disabled` attr value
         videoPreviewEl.setAttribute('data-observe-play', '');
         if (videoPreviewEl.__videoControl) {

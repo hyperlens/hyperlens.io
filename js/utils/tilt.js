@@ -36,8 +36,8 @@ $.fn.tilt = function (options) {
          * @type {*}
          */
         this.settings = $.extend({
-            maxTiltX: $this.is('[data-tilt-max]') ? $this.data('tilt-max') : 15,
-            maxTiltY: $this.is('[data-tilt-max]') ? $this.data('tilt-max') : 22,
+            maxTiltX: $this.is('[data-tilt-max]') ? $this.data('tilt-max') : 12,
+            maxTiltY: $this.is('[data-tilt-max]') ? $this.data('tilt-max') : 18,
             perspective: $this.is('[data-tilt-perspective]') ? $this.data('tilt-perspective') : 600,
             easing: $this.is('[data-tilt-easing]') ? $this.data('tilt-easing') : 'ease',
             speed: $this.is('[data-tilt-speed]') ? $this.data('tilt-speed') : 100,

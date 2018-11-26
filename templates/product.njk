@@ -10,11 +10,13 @@
         <section class="intro u-container" data-observe-bg="gray" data-observe-threshold="0.25">
             <div class="intro__inner">
                 <div class="intro__center">
-                    <div class="intro__video-wrap">
-                        <video class="intro__video" preload="auto" muted loop data-intro-video data-observe-play="disabled">
-                            <source src="{{ url_prefix }}video/case7.webm" type="video/webm">
-                            <source src="{{ url_prefix }}video/case7.mp4" type="video/mp4">
-                        </video>
+                    <div class="intro__video-wrap-outer">
+                        <div class="intro__video-wrap-inner">
+                            <video class="intro__video" preload="auto" muted loop data-intro-video-preview data-observe-play="disabled">
+                                <source src="{{ url_prefix }}video/product-intro.webm" type="video/webm">
+                                <source src="{{ url_prefix }}video/product-intro.mp4" type="video/mp4">
+                            </video>
+                        </div>
                     </div>
                     <h1 class="intro__title u-title">making the technology easily accessible to everyone <br>
                         使每个人都能轻松访问该技术</h1>
