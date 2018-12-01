@@ -44,7 +44,7 @@ export default function initObserver() {
         }
     });
 
-    const headerHeight = getComputedStyle(document.documentElement).getPropertyValue('--header-height');
+    const headerHeight = getComputedStyle(document.documentElement).getPropertyValue('--header-height') || '112px';
 
     // init observer
     const observer = new IntersectionObserver((entries) => {

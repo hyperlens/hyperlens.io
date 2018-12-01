@@ -1,0 +1,79 @@
+{% extends "layouts/default.njk" %}
+{% set page_title = "" %}
+{% set page_description = "" %}
+{% set body_class = "" %}
+
+{% block content %}
+
+
+    <article class="main-inner">
+        <section class="company-intro u-section u-container">
+            <div class="company-intro__inner u-title-text">
+                <div class="company-intro__lens-wrap">
+                    <img class="company-intro__lens-layer" src="{{ url_prefix }}img/lens-company.svg" width="754" height="169" alt="" role="presentation" data-inline-svg>
+                </div>
+                <h2 class="company-intro__title u-title">
+                    Now your story has no limits for expression <br> 改变你与世界互动的方式
+                </h2>
+            </div>
+        </section>
+
+        <section class="u-section u-container" data-observe-bg="gray" data-observe-threshold="0.02">
+            <div class="u-grid u-grid--vertical-margin">
+                <div class="u-cell u-cell--first u-show-fade" data-observe-show>
+                    <h2 class="u-sticky">For developers</h2>
+                </div>
+                <div class="u-cell u-cell--rest">
+                    <div class="u-section__part">
+                        <div class="u-grid u-grid--vertical-margin u-grid--inner u-show-fade" data-observe-show>
+                            <div class="u-cell u-cell--rest-second">
+                                <h3 class="u-caption">Digital environment</h3>
+                            </div>
+                            <div class="u-cell u-cell--rest-third">
+                                With a powerful SDK and API, Hyperlens will attract developers from different backgrounds and with different skill-sets and interests. They’ll have access to the full potential of the Hyperlens platform, making the only limiting factor their imagination.
+                            </div>
+                        </div>
+                    </div>
+
+                    <p class="u-section__part u-title-text u-show-fade" data-observe-show>
+                        Independent developers will have an accessible and powerful way to engage within the AR world. Demand and possibility will drive them to produce their own applications, learning new skills and expanding possibilities in the process.
+                    </p>
+
+                    <div class="u-section__part">
+                        <div class="u-grid u-grid--vertical-margin u-grid--inner u-show-fade" data-observe-show>
+                            <div class="u-cell u-cell--rest-second u-hidden-medium-down"></div>
+                            <div class="u-cell u-cell--rest-third">
+                                Professional AR developers and development studios will have access to new toolkits that turn the virtual world into their playground. They’ll have the framework to create new applications, Lenses, and objects for independent projects and for partnerships with brands.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="perspective-video-section u-section__part u-cell--large--3-4">
+                        <video class="perspective-video" preload="auto" muted loop data-intro-video data-observe-show data-observe-play>
+                            <source src="{{ url_prefix }}video/index-intro.mp4" type="video/mp4">
+                        </video>
+                    </div>
+
+                    <div class="u-section__part u-section__part--large">
+                        <div class="u-grid u-grid--vertical-margin u-grid--inner u-show-fade" data-observe-show>
+                            <div class="u-cell u-cell--rest-second">
+                                <h3 class="u-caption">Art and design</h3>
+                            </div>
+                            <div class="u-cell u-cell--rest-third">
+                                Hyperlens opens up a completely new platform for designers to showcase their skills. From commercial projects to creating new art forms, the creative community will literally have the power to modify reality in new and exciting ways.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </article>
+{% endblock %}
+
+
+{#{% block scripts %}#}
+    {#{{ super() }}#}
+    {#<script src="{{ url_prefix }}js/company.min.js"></script>#}
+{#{% endblock %}#}

@@ -1,0 +1,67 @@
+{% extends "layouts/default.njk" %}
+{% set page_title = "" %}
+{% set page_description = "" %}
+{% set body_class = "" %}
+
+{% block content %}
+
+
+    <article class="main-inner">
+        <section class="company-intro u-section u-container" data-observe-bg="gray" data-observe-threshold="0.25">
+            <div class="company-intro__inner u-title-text">
+                <div class="company-intro__lens-wrap">
+                    <img class="company-intro__lens-layer" src="{{ url_prefix }}img/lens-company.svg" width="754" height="169" alt="" role="presentation" data-inline-svg>
+                </div>
+                <h2 class="company-intro__title u-title">
+                    Technology is an integral <br> part of society <br> 改变你与世界互动的方式
+                </h2>
+            </div>
+        </section>
+
+        <section class="u-section u-container">
+            <div class="u-grid u-grid--vertical-margin">
+                <div class="u-cell u-cell--first u-show-fade" data-observe-show>
+                    <h2 class="u-sticky">About market</h2>
+                </div>
+                <div class="u-cell u-cell--rest">
+                    <p class="u-section__part u-caption u-show-fade" data-observe-show>
+                        Creating a custom lens provides a business with a new way to engage and interact with their target audience. A business will be able to program a lens as part of their marketing strategy, distributing digital products and services by altering the viewed reality for relevant users.
+                    </p>
+
+                    <div class="perspective-video-section u-section__part u-cell--large--3-4">
+                        <video class="perspective-video" preload="auto" muted loop data-intro-video data-observe-show data-observe-play>
+                            <source src="{{ url_prefix }}video/index-intro.mp4" type="video/mp4">
+                        </video>
+                    </div>
+
+                    <p class="u-section__part u-section__part--large u-title-text u-show-fade" data-observe-show>
+                        From the small fee for placing a digital object in the AR space, to third party businesses using the space to sell services and goods, the currency will be in demand<br>and fluid.
+                    </p>
+
+                    <div class="u-section__part u-section__part--large">
+                        <div class="u-grid u-grid--vertical-margin u-grid--inner u-show-fade" data-observe-show>
+                            <div class="u-cell u-cell--rest-second">
+                                <h3 class="u-caption">Beginning of growth</h3>
+                            </div>
+                            <div class="u-cell u-cell--rest-third">
+                                <p>Lenses will be developed for a multitude of purposes. Retail outlets will be able to add value and information to the casual browser, while fitness applications will have the ability to provide a unique and engaging experience. Gaming is already starting to embrace AR, and Hyperlens will provide them with the natural evolution of current technology. Information for travellers will automatically blend into their perceived reality.</p>
+                                <p>It allows businesses to transcend the restrictions of the Internet and creates a
+                                    canvas as wide as the user’s field of view. Whether a lens is sponsored or created
+                                    purely for promotion, the limitations are endless and the implications for business
+                                    are huge.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </article>
+{% endblock %}
+
+
+{#{% block scripts %}#}
+    {#{{ super() }}#}
+    {#<script src="{{ url_prefix }}js/company.min.js"></script>#}
+{#{% endblock %}#}

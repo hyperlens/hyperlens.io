@@ -19,7 +19,7 @@
                             {#<button class="intro__video-close is-active u-semantic-button" data-intro-close>
                                 <span class="header__offcanvas-icon">Menu</span>
                             </button>#}
-                            <video class="intro__video intro__video--preview" preload="auto" loop data-intro-video-preview data-observe-play="disabled">
+                            <video class="intro__video intro__video--preview" preload="auto" loop muted playsinline data-intro-video-preview data-observe-play="disabled">
                                 <source src="{{ url_prefix }}video/case-basic.webm" type="video/webm">
                                 <source src="{{ url_prefix }}video/case-basic.mp4" type="video/mp4">
                             </video>
@@ -169,19 +169,28 @@
                                             <div class="index-timeline__item-grid">
                                                 <div class="index-timeline__cell">
                                                     <figure class="index-timeline__image index-timeline__image--hololens u-aspect-ratio" style="--aspect-ratio:790/347;">
-                                                        <img src="{{ prefix_url }}img/timeline-hololens.jpg" srcset="{{ prefix_url }}img/timeline-hololens@2x.jpg 2x" alt="Microsoft Hololens">
+                                                        <picture>
+                                                            <source type="image/webp" srcset="{{ prefix_url }}img/timeline-hololens.webp, {{ prefix_url }}img/timeline-hololens@2x.webp 2x">
+                                                            <img src="{{ prefix_url }}img/timeline-hololens.jpg" srcset="{{ prefix_url }}img/timeline-hololens@2x.jpg 2x" alt="Microsoft Hololens">
+                                                        </picture>
                                                     </figure>
                                                     <p class="index-timeline__text">Microsoft introduces Hololens as a headset designed to put holograms and objects around&nbsp;you.</p>
                                                 </div>
                                                 <div class="index-timeline__cell">
                                                     <figure class="index-timeline__image index-timeline__image--default u-aspect-ratio" style="--aspect-ratio:230/230;">
-                                                        <img src="{{ prefix_url }}img/timeline-pokemon.jpg" srcset="{{ prefix_url }}img/timeline-pokemon@2x.jpg 2x" alt="Pokemon Go">
+                                                        <picture>
+                                                            <source type="image/webp" srcset="{{ prefix_url }}img/timeline-pokemon.webp, {{ prefix_url }}img/timeline-pokemon@2x.webp 2x">
+                                                            <img src="{{ prefix_url }}img/timeline-pokemon.jpg" srcset="{{ prefix_url }}img/timeline-pokemon@2x.jpg 2x" alt="Pokemon Go">
+                                                        </picture>
                                                     </figure>
                                                     <p>Pokemon Go comes into the world on 6 July of 2016 making the largest public involvement into AR technology through the phone camera — 45 millions of daily users.</p>
                                                 </div>
                                                 <div class="index-timeline__cell">
                                                     <figure class="index-timeline__image index-timeline__image--default u-aspect-ratio" style="--aspect-ratio:230/230;">
-                                                        <img src="{{ prefix_url }}img/timeline-snapchat.png" srcset="{{ prefix_url }}img/timeline-snapchat@2x.png 2x" alt="Snapchat">
+                                                        <picture>
+                                                            <source type="image/webp" srcset="{{ prefix_url }}img/timeline-snapchat.webp, {{ prefix_url }}img/timeline-snapchat@2x.webp 2x">
+                                                            <img src="{{ prefix_url }}img/timeline-snapchat.png" srcset="{{ prefix_url }}img/timeline-snapchat@2x.png 2x" alt="Snapchat">
+                                                        </picture>
                                                     </figure>
                                                     <p>Snapchat Ads add AR to user experience starting 2016.</p>
                                                 </div>
@@ -195,13 +204,19 @@
                                                 </div>
                                                 <div class="index-timeline__cell">
                                                     <figure class="index-timeline__image index-timeline__image--iphone u-aspect-ratio" style="--aspect-ratio:856/351;">
-                                                        <img src="{{ prefix_url }}img/timeline-iphone.jpg" srcset="{{ prefix_url }}img/timeline-iphone@2x.jpg 2x" alt="iPhone X">
+                                                        <picture>
+                                                            <source type="image/webp" srcset="{{ prefix_url }}img/timeline-iphone.webp, {{ prefix_url }}img/timeline-iphone@2x.webp 2x">
+                                                            <img src="{{ prefix_url }}img/timeline-iphone.jpg" srcset="{{ prefix_url }}img/timeline-iphone@2x.jpg 2x" alt="iPhone X">
+                                                        </picture>
                                                     </figure>
                                                     <p class="index-timeline__text">Apple releases iPhone X with TrueDepth Camera that among many features allows  unlocking the phone with user’s face only</p>
                                                 </div>
                                                 <div class="index-timeline__cell">
                                                     <figure class="index-timeline__image index-timeline__image--default u-aspect-ratio" style="--aspect-ratio:230/230;">
-                                                        <img src="{{ prefix_url }}img/timeline-magicleap.jpg" srcset="{{ prefix_url }}img/timeline-magicleap@2x.jpg 2x" alt=">Magic Leap">
+                                                        <picture>
+                                                            <source type="image/webp" srcset="{{ prefix_url }}img/timeline-magicleap.webp, {{ prefix_url }}img/timeline-magicleap@2x.webp 2x">
+                                                            <img src="{{ prefix_url }}img/timeline-magicleap.jpg" srcset="{{ prefix_url }}img/timeline-magicleap@2x.jpg 2x" alt=">Magic Leap">
+                                                        </picture>
                                                     </figure>
                                                     <p>Magic Leap announces its first product Magic Leap One headset that projects a digital light field into the user's eye therefore creating images over real-world objects.</p>
                                                 </div>
@@ -305,8 +320,8 @@
 
         {# technology #}
         <section class="index-technology u-container" data-observe-bg="black" data-observe-threshold="0.25">
-            <div class="index-technology__video-section u-section">
-                <video class="index-technology__video" preload="auto" muted loop data-intro-video data-observe-show data-observe-play>
+            <div class="perspective-video-section u-section">
+                <video class="perspective-video index-technology__video" preload="auto" muted playsinline loop data-intro-video data-observe-show data-observe-play>
                     <source src="{{ url_prefix }}video/case-basic.webm" type="video/webm">
                     <source src="{{ url_prefix }}video/case-basic.mp4" type="video/mp4">
                 </video>
@@ -411,42 +426,60 @@
                         <div class="u-cell u-cell--rest index-team__list">
                             <div class="index-team__item" data-horizontal-scroll-height>
                                 <figure class="u-aspect-ratio" style="--aspect-ratio:400/330;">
-                                    <img src="{{ url_prefix }}img/team-1.jpg" srcset="{{ url_prefix }}img/team-1@2x.jpg 2x" alt="" role="presentation">
+                                    <picture>
+                                        <source type="image/webp" srcset="{{ prefix_url }}img/team-1.webp, {{ prefix_url }}img/team-1@2x.webp 2x">
+                                        <img src="{{ url_prefix }}img/team-1.jpg" srcset="{{ url_prefix }}img/team-1@2x.jpg 2x" alt="" role="presentation">
+                                    </picture>
                                 </figure>
                                 <h4 class="index-team__name u-caption">Miro Pavletic</h4>
                                 <p class="index-team__description">A graduate of Kazakh National Pedagogical University Abai, Vyacheslav is currently working as&nbsp;freelance graphic designer and as a&nbsp;type designer for&nbsp;Brownfox</p>
                             </div>
                             <div class="index-team__item">
                                 <figure class="u-aspect-ratio" style="--aspect-ratio:400/330;">
-                                    <img src="{{ url_prefix }}img/team-2.jpg" srcset="{{ url_prefix }}img/team-2@2x.jpg 2x" alt="" role="presentation">
+                                    <picture>
+                                        <source type="image/webp" srcset="{{ prefix_url }}img/team-2.webp, {{ prefix_url }}img/team-2@2x.webp 2x">
+                                        <img src="{{ url_prefix }}img/team-2.jpg" srcset="{{ url_prefix }}img/team-2@2x.jpg 2x" alt="" role="presentation">
+                                    </picture>
                                 </figure>
                                 <h4 class="index-team__name u-caption">Alicia Wilson</h4>
                                 <p class="index-team__description">Gayaneh has designed Cyrillic localizations for most major type libraries, including Linotype, Bitstream, The Font Bureau, ITC, Berthold, Typotheque, Emigre, and ParaType</p>
                             </div>
                             <div class="index-team__item">
                                 <figure class="u-aspect-ratio" style="--aspect-ratio:400/330;">
-                                    <img src="{{ url_prefix }}img/team-3.jpg" srcset="{{ url_prefix }}img/team-3@2x.jpg 2x" alt="" role="presentation">
+                                    <picture>
+                                        <source type="image/webp" srcset="{{ prefix_url }}img/team-3.webp, {{ prefix_url }}img/team-3@2x.webp 2x">
+                                        <img src="{{ url_prefix }}img/team-3.jpg" srcset="{{ url_prefix }}img/team-3@2x.jpg 2x" alt="" role="presentation">
+                                    </picture>
                                 </figure>
                                 <h4 class="index-team__name u-caption">Chad Leger</h4>
                                 <p class="index-team__description">Originally from Finland, Lotta Nieminen studied graphic design and illustration at the University of Art and Design Helsinki and the Rhode Island School of Design, before founding her New York-based studio in 2012</p>
                             </div>
                             <div class="index-team__item">
                                 <figure class="u-aspect-ratio" style="--aspect-ratio:400/330;">
-                                    <img src="{{ url_prefix }}img/team-4.jpg" srcset="{{ url_prefix }}img/team-4@2x.jpg 2x" alt="" role="presentation">
+                                    <picture>
+                                        <source type="image/webp" srcset="{{ prefix_url }}img/team-4.webp, {{ prefix_url }}img/team-4@2x.webp 2x">
+                                        <img src="{{ url_prefix }}img/team-4.jpg" srcset="{{ url_prefix }}img/team-4@2x.jpg 2x" alt="" role="presentation">
+                                    </picture>
                                 </figure>
                                 <h4 class="index-team__name u-caption">Nancy Woodster</h4>
                                 <p class="index-team__description">Gayaneh is the mastermind behind Serebro Nabora, a prominent annual international type conference held in Russia.</p>
                             </div>
                             <div class="index-team__item">
                                 <figure class="u-aspect-ratio" style="--aspect-ratio:400/330;">
-                                    <img src="{{ url_prefix }}img/team-5.jpg" srcset="{{ url_prefix }}img/team-5@2x.jpg 2x" alt="" role="presentation">
+                                    <picture>
+                                        <source type="image/webp" srcset="{{ prefix_url }}img/team-5.webp, {{ prefix_url }}img/team-5@2x.webp 2x">
+                                        <img src="{{ url_prefix }}img/team-5.jpg" srcset="{{ url_prefix }}img/team-5@2x.jpg 2x" alt="" role="presentation">
+                                    </picture>
                                 </figure>
                                 <h4 class="index-team__name u-caption">Arthur Peterson</h4>
                                 <p class="index-team__description">The most important thing for us is to find a new, bright, compelling and unique character of typefaces. One of the challenges here is to stay within the group of typefaces, called workhorses, fonts that cover a broad range of application areas.</p>
                             </div>
                             <div class="index-team__item">
                                 <figure class="u-aspect-ratio" style="--aspect-ratio:400/330;">
-                                    <img src="{{ url_prefix }}img/team-6.jpg" srcset="{{ url_prefix }}img/team-6@2x.jpg 2x" alt="" role="presentation">
+                                    <picture>
+                                        <source type="image/webp" srcset="{{ prefix_url }}img/team-6.webp, {{ prefix_url }}img/team-6@2x.webp 2x">
+                                        <img src="{{ url_prefix }}img/team-6.jpg" srcset="{{ url_prefix }}img/team-6@2x.jpg 2x" alt="" role="presentation">
+                                    </picture>
                                 </figure>
                                 <h4 class="index-team__name u-caption">Malcolm Franklin</h4>
                                 <p class="index-team__description">His work has been widely acclaimed, included in numerous international books and periodicals, and won an award from Granshan international type design competition, 2013.</p>

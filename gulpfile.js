@@ -25,7 +25,8 @@ const path = require('path');
 const cache = require('gulp-cache');
 const imagemin = require('gulp-imagemin');
 const mozjpeg = require('imagemin-mozjpeg');
-//const pngquant = require('imagemin-pngquant');
+const pngquant = require('imagemin-pngquant');
+const webp = require('imagemin-webp');
 
 
 let paths = {
@@ -33,6 +34,7 @@ let paths = {
         less: 'less/*.less',
         js: 'js/*.js',
         img: ['img/**/*.{png,jpg,gif,svg}'],
+        imgWebp: ['img/**/*.{png,jpg}'],
         templatesDir: ['templates/', 'img/'],
         templatesFiles: 'templates/*.njk',
     },
@@ -125,16 +127,17 @@ function cacheBustTask() {
 
 
 // IMG
-gulp.task('imagemin', function () {
+gulp.task('imagemin', ['imagemin:default', 'imagemin:webp']);
+gulp.task('imagemin:default', function () {
     return gulp.src(paths.src.img)
         .pipe(plumber({errorHandler: onError}))
         .pipe(cache(
             imagemin([
                 imagemin.gifsicle({interlaced: true}),
-                mozjpeg({quality: 90}),
+                mozjpeg({quality: 85}),
                 imagemin.jpegtran({progressive: true}),
-                //pngquant(),
-                imagemin.optipng({optimizationLevel: 5}),
+                pngquant(),
+                // imagemin.optipng({optimizationLevel: 5}),
                 imagemin.svgo({plugins: [{removeViewBox: false}]})
             ], {
                 verbose: true
@@ -142,6 +145,24 @@ gulp.task('imagemin', function () {
                 fileCache: new cache.Cache(paths.cache),
                 name: 'default',
             }))
+        .pipe(gulp.dest(paths.dest.img));
+});
+gulp.task('imagemin:webp', function () {
+    return gulp.src(paths.src.imgWebp)
+        .pipe(plumber({errorHandler: onError}))
+        .pipe(cache(
+            imagemin([
+                webp({
+                    quality: 85,
+                    method: 5,
+                }),
+            ], {
+                verbose: true
+            }), {
+                fileCache: new cache.Cache(paths.cache),
+                name: 'webp',
+            }))
+        .pipe(rename({ extname: '.webp' }))
         .pipe(gulp.dest(paths.dest.img));
 });
 gulp.task('imagemin:clean', ['imagemin:clean-dest', 'imagemin:clean-cache']);
