@@ -7,14 +7,14 @@
 
 
     <article class="main-inner">
-        <section class="company-intro u-section u-container" data-observe-bg="gray" data-observe-threshold="0.25">
-            <div class="company-intro__inner u-title-text">
-                <div class="company-intro__lens-wrap">
-                    <img class="company-intro__lens-layer" src="{{ url_prefix }}img/lens-company.svg" width="754" height="169" alt="" role="presentation" data-inline-svg>
-                </div>
-                <h2 class="company-intro__title u-title">
-                    Changing the way you <br>interact with the world <br>
-                    改变你与世界互动的方式
+        <section class="investors-intro u-section u-container" data-observe-bg="gray" data-observe-threshold="0.25">
+            <div class="investors-intro__inner">
+                <img class="investors-intro__lens-layer investors-intro__lens-layer--1" src="{{ url_prefix }}img/lens-investors.svg" alt="" role="presentation">
+                <img class="investors-intro__lens-layer investors-intro__lens-layer--2" src="{{ url_prefix }}img/lens-investors.svg" alt="" role="presentation">
+                <img class="investors-intro__lens-layer investors-intro__lens-layer--3" src="{{ url_prefix }}img/lens-investors.svg" alt="" role="presentation">
+                <img class="investors-intro__lens-layer investors-intro__lens-layer--4" src="{{ url_prefix }}img/lens-investors.svg" alt="" role="presentation">
+                <h2 class="investors-intro__title u-title">
+                    New ways to invest in augmented reality <br>投资增强现实的新方法
                 </h2>
             </div>
         </section>
@@ -69,30 +69,48 @@
         </section>
 
         {# growth #}
-        <section class="index-technology u-container" data-observe-bg="black" data-observe-threshold="0.25">
-            <div class="perspective-video-section u-section">
-                <video class="perspective-video index-technology__video" preload="auto" muted loop data-intro-video data-observe-show data-observe-play>
-                    <source src="{{ url_prefix }}video/case-basic.webm" type="video/webm">
-                    <source src="{{ url_prefix }}video/case-basic.mp4" type="video/mp4">
-                </video>
+        <setion class="investors-growth u-container" data-observe-bg="black" data-observe-threshold="0.25">
+            <div class="u-grid u-grid--vertical-margin u-show-fade" data-observe-show>
+                <h2 class="u-cell u-cell--first">Growth of the market</h2>
             </div>
-        </section>
+            <div class="investors-growth__graph u-show-fade" data-observe-show>
+                <div class="investors-growth__graph-item investors-growth__graph-item--2020">
+                    <div class="investors-growth__graph-caption">
+                        <p class="u-title-text">160 billions</p>
+                        <p class="investors-growth__graph-caption-time">by 2020</p>
+                    </div>
+                    <img class="investors-growth__graph-image" src="{{ url_prefix }}img/lens-investors-growth.svg" alt="" role="presentation">
+                </div>
+                <div class="investors-growth__graph-item investors-growth__graph-item--now">
+                    <div class="investors-growth__graph-caption">
+                        <p class="u-title-text">60 billions</p>
+                        <p class="investors-growth__graph-caption-time">now</p>
+                    </div>
+                    <img class="investors-growth__graph-image" src="{{ url_prefix }}img/lens-investors-growth.svg" alt="" role="presentation">
+                </div>
+            </div>
+            <div class="u-grid u-grid--vertical-margin u-show-fade" data-observe-show>
+                <div class="u-cell u-cell--first u-hidden-large-down"></div>
+                <div class="u-cell u-cell--second u-hidden-medium-down"></div>
+                <div class="u-cell u-cell--third">Deloitte estimate the AR/VR market</div>
+            </div>
+        </setion>
 
         {# monetisation #}
         <section class="u-section u-container">
             <div class="u-grid u-grid--vertical-margin">
                 <div class="u-cell u-cell--first u-show-fade" data-observe-show>
-                    <h2 class="u-sticky">aaa</h2>
+                    <h2 class="u-sticky">Ways for <br class="u-hidden-large-down">monetisation</h2>
                 </div>
                 <div class="u-cell u-cell--rest">
                     <div class="u-section__part">
                         <div class="u-grid u-grid--vertical-margin u-grid--inner u-show-fade" data-observe-show>
                             <div class="u-cell u-cell--rest-second">
-                                <h3 class="u-caption">aaa</h3>
+                                <h3 class="u-caption">Scan-to-Unlock on&nbsp;the&nbsp;go</h3>
                             </div>
                             <div class="u-cell u-cell--rest-third">
-                                <p>aaa</p>
-                                <p>aaa</p>
+                                <p>Businesses, organisations, and events will be able to engage users by placing QR codes in the desired location. Simply scanning the code will apply the lens, allowing users to experience the desired reality immediately. This could be used for promotions, giveaways, game participation, or simply to add value to a customer’s experience.</p>
+                                <p>There are at least two ways this approach can be monetised. Brands who use AR as part of the offering can charge users to activate a lens. While promotional lenses will remain free, a game release or mobile app can add additional value in the AR space.</p>
                             </div>
                         </div>
                     </div>
@@ -100,11 +118,11 @@
                     <div class="u-section__part">
                         <div class="u-grid u-grid--vertical-margin u-grid--inner u-show-fade" data-observe-show>
                             <div class="u-cell u-cell--rest-second">
-                                <h3 class="u-caption">aaa</h3>
+                                <h3 class="u-caption">Sponsored Lenses</h3>
                             </div>
                             <div class="u-cell u-cell--rest-third">
-                                <p>aaa</p>
-                                <p>aaa</p>
+                                <p>Sponsoring a lens is an effective way to reach millions of users. It enables advertisers to prompt action inside the app. They can add a button that takes users directly to the product’s webpage or further information. It can also be used to install an app or play a promotional video.</p>
+                                <p>Integration with a blockchain layer means payments can be made seamlessly from within the AR world. A virtual object can be purchased in real time, while a physical product can be dispatched to the user’s address. The cost of sponsorship will vary depending on the day of the week, national holidays, and current trends. This represents a large source of income for Hyperlens.</p>
                             </div>
                         </div>
                     </div>
@@ -118,11 +136,11 @@
                     <div class="u-section__part u-section__part--large">
                         <div class="u-grid u-grid--vertical-margin u-grid--inner u-show-fade" data-observe-show>
                             <div class="u-cell u-cell--rest-second">
-                                <h3 class="u-caption">aaa</h3>
+                                <h3 class="u-caption">Discover ads and <br>fee based interaction</h3>
                             </div>
                             <div class="u-cell u-cell--rest-third">
-                                <p>aaa</p>
-                                <p>aaa</p>
+                                <p>Advertising within AR has exploded in recent years, with over 70 million users engaging with lenses every day it’s an effective way to reach customers. Bigger brands opt for ‘Discover’ ads that receive premium placement.</p>
+                                <p>In AR advertising will be a major source of revenue for Hyperlens. Fee based interactions will monetise actions in a similar way to how Google’s AdSense has with click throughs. Any brand can place digital objects within the Augmented world. These may be integrated in their own Lens or distributed within the default Lens, so that every user has access to them. Whenever a user interacts with these objects in a relevant way, Hyperlens will receive a small fee from the object creator.</p>
                             </div>
                         </div>
                     </div>
