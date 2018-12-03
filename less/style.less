@@ -253,6 +253,7 @@
 .intro__controls {align-self: flex-start;}
 .intro__controls-item {display: flex; align-items: center;}
 .intro__controls-icon {margin-right: 8px; flex-shrink: 0; stroke: currentColor; /*width: 14px; height: 14px;*/}
+.intro__controls-icon--fill {stroke: none; fill: currentColor}
 @media (min-width: @breakpoint-small-up) {
     .intro__title {transform: translateY(-53%); margin-bottom: 32px;}
 }
@@ -823,5 +824,25 @@
 }
 @media (min-width: @breakpoint-large-up) {
     .developers-intro__lens-layer {width: auto; /* 175 */ margin: (-275px + 5px) 0 0 -87px;}
+}
+
+
+
+// Documents
+.page--documents {overflow: hidden;}
+.documents-intro {min-height: 100vh; padding-top: @header-height-fallback; padding-top: var(--header-height); padding-bottom: 60px; position: relative; display: flex; flex-direction: column; justify-content: flex-end; z-index: 1; overflow: hidden;}
+.documents-intro__list {
+    list-style: none; padding-left: 0;
+    li {padding: 0; margin: 0;}
+    li + li {margin-top: 25px;}
+}
+.documents-intro__list-link {display: flex; align-items: center;}
+.documents-intro__list-icon {margin-right: 15px; width: 20px;}
+@media (min-width: @breakpoint-medium-up) {
+    .documents-intro {padding-bottom: 100px;}
+    .documents-intro__list-icon {margin-right: 15px; width: auto;}
+    .documents-intro__list {
+        li + li {margin-top: 30px;}
+    }
 }
 

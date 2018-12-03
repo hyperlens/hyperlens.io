@@ -1,0 +1,48 @@
+{% extends "layouts/documents.njk" %}
+{% set page_title = "" %}
+{% set page_description = "" %}
+{% set body_class = "u-bg--black page--documents" %}
+
+{% block content %}
+    <article class="main-inner">
+        <section class="documents-intro u-container">
+            <div class="u-grid u-grid--vertical-margin u-show-fade" data-observe-show>
+                <div class="u-cell u-cell--first u-hidden-large-down"></div>
+                <div class="u-cell u-cell--second  u-hidden-medium-down"></div>
+                <ul class="u-cell u-cell--third documents-intro__list u-caption">
+                    <li>
+                        <a class="documents-intro__list-link u-link" href="#">
+                            <img class="documents-intro__list-icon" src="{{ url_prefix }}img/icon-triangle-download-large.svg" width="23" height="21" alt="" role="presentation">
+                            White paper
+                        </a>
+                    </li>
+                    <li>
+                        <a class="documents-intro__list-link u-link" href="#">
+                            <img class="documents-intro__list-icon" src="{{ url_prefix }}img/icon-triangle-download-large.svg" width="23" height="21" alt="" role="presentation">
+                            One pager
+                        </a>
+                    </li>
+                    <li>
+                        <a class="documents-intro__list-link u-link" href="#">
+                            <img class="documents-intro__list-icon" src="{{ url_prefix }}img/icon-triangle-download-large.svg" width="23" height="21" alt="" role="presentation">
+                            Pitch Deck
+                        </a>
+                    </li>
+                    <li>
+                        <a class="documents-intro__list-link u-link" href="#">
+                            <img class="documents-intro__list-icon" src="{{ url_prefix }}img/icon-triangle-download-large.svg" width="23" height="21" alt="" role="presentation">
+                            Technical White Paper
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+    </article>
+{% endblock %}
+
+
+{#{% block scripts %}
+    {{ super() }}
+    <script src="{{ url_prefix }}js/company.min.js"></script>
+{% endblock %}#}
