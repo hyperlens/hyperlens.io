@@ -12,17 +12,32 @@
                 <div class="intro__center">
                     <div class="intro__video-wrap-outer"> {# el to calculate actual size #}
                         <div class="intro__video-wrap-inner" data-intro-video-inner> {# el to apply transforms #}
+                            <video class="intro__video intro__video--preview" preload="auto" loop muted playsinline data-intro-video-preview data-observe-play="disabled">
+                                <source src="{{ url_prefix }}video/case-basic.webm" type="video/webm">
+                                <source src="{{ url_prefix }}video/case-basic-hevc.mp4" type="video/mp4; codecs=hevc">
+                                <source src="{{ url_prefix }}video/case-basic.mp4" type="video/mp4; codecs=avc1">
+                            </video>
                             <video class="intro__video intro__video--main" preload="auto" data-intro-video>
-                                <source src="{{ url_prefix }}video/index-intro.webm" type="video/webm">
-                                <source src="{{ url_prefix }}video/index-intro.mp4" type="video/mp4">
+                                {#<source src="{{ url_prefix }}video/index-intro-1920-av1.webm" type="video/webm; codecs=av1" media="(min-width: 1921px)">#}
+                                <source src="{{ url_prefix }}video/index-intro-1280-av1.webm" type="video/webm; codecs=av1" media="(min-width: 1024px)">
+                                {#<source src="{{ url_prefix }}video/index-intro-640-av1.webm" type="video/webm; codecs=av1" media="(min-width: 640px)">#}
+                                <source src="{{ url_prefix }}video/index-intro-426-av1.webm" type="video/webm; codecs=av1">
+                                <source src="{{ url_prefix }}video/index-intro-1920-vp9.webm" type="video/webm; codecs=vp9" media="(min-width: 1921px)">
+                                <source src="{{ url_prefix }}video/index-intro-1280-vp9.webm" type="video/webm; codecs=vp9" media="(min-width: 1024px)">
+                                <source src="{{ url_prefix }}video/index-intro-640-vp9.webm" type="video/webm; codecs=vp9" media="(min-width: 640px)">
+                                <source src="{{ url_prefix }}video/index-intro-426-vp9.webm" type="video/webm; codecs=vp9">
+                                <source src="{{ url_prefix }}video/index-intro-1920-hevc.mp4" type="video/mp4; codecs=hevc" media="(min-width: 1900px)">
+                                <source src="{{ url_prefix }}video/index-intro-1280-hevc.mp4" type="video/mp4; codecs=hevc" media="(min-width: 1024px)">
+                                <source src="{{ url_prefix }}video/index-intro-640-hevc.mp4" type="video/mp4; codecs=hevc" media="(min-width: 640px)">
+                                <source src="{{ url_prefix }}video/index-intro-426-hevc.mp4" type="video/mp4; codecs=hevc">
+                                <source src="{{ url_prefix }}video/index-intro-1920.mp4" type="video/mp4; codecs=avc1" media="(min-width: 1921px)">
+                                <source src="{{ url_prefix }}video/index-intro-1280.mp4" type="video/mp4; codecs=avc1" media="(min-width: 1024px)">
+                                <source src="{{ url_prefix }}video/index-intro-640.mp4" type="video/mp4; codecs=avc1" media="(min-width: 640px)">
+                                <source src="{{ url_prefix }}video/index-intro-426.mp4" type="video/mp4; codecs=avc1">
                             </video>
                             {#<button class="intro__video-close is-active u-semantic-button" data-intro-close>
                                 <span class="header__offcanvas-icon">Menu</span>
                             </button>#}
-                            <video class="intro__video intro__video--preview" preload="auto" loop muted playsinline data-intro-video-preview data-observe-play="disabled">
-                                <source src="{{ url_prefix }}video/case-basic.webm" type="video/webm">
-                                <source src="{{ url_prefix }}video/case-basic.mp4" type="video/mp4">
-                            </video>
                         </div>
                     </div>
                     <h1 class="intro__title u-title">Reality is about <br>
@@ -323,7 +338,8 @@
             <div class="perspective-video-section u-section">
                 <video class="perspective-video index-technology__video" preload="auto" muted playsinline loop data-intro-video data-observe-show data-observe-play>
                     <source src="{{ url_prefix }}video/case-basic.webm" type="video/webm">
-                    <source src="{{ url_prefix }}video/case-basic.mp4" type="video/mp4">
+                    <source src="{{ url_prefix }}video/case-basic-hevc.mp4" type="video/mp4; codecs=hevc">
+                    <source src="{{ url_prefix }}video/case-basic.mp4" type="video/mp4; codecs=avc1">
                 </video>
             </div>
 
