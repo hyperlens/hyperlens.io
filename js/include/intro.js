@@ -9,10 +9,19 @@ export default function initIntro() {
     const videoPreviewEl = document.querySelector('[data-intro-video-preview]');
     const watchButtonEl = document.querySelector('[data-intro-watch]');
     // const closeButtonEl = document.querySelector('[data-intro-close]');
+
+    let isVideoHasData = false;
+    if (videoEl) {
+        videoEl.volume = 0.5;
+        videoEl.addEventListener('playing', () => {
+            isVideoHasData = true;
+        });
+        videoEl.addEventListener('waiting', () => {
+            isVideoHasData = false;
+        });
+    }
+
     setTimeout(() => {
-        if (videoEl) {
-            videoEl.volume = 0.5;
-        }
         // enable play observer by removing `disabled` attr value
         videoPreviewEl.setAttribute('data-observe-play', '');
         if (videoPreviewEl.__videoControl) {
@@ -77,6 +86,9 @@ export default function initIntro() {
         window.addEventListener('resize', zoomOut);
         document.addEventListener('click', handleOuterClick);
         document.addEventListener('keyup', handleEsc);
+
+        videoInnerEl.removeEventListener(support.transition.end, handleZoomOutEnd);
+        videoInnerEl.addEventListener(support.transition.end, handleZoomInEnd);
     }
 
     function zoomOut() {
@@ -93,11 +105,14 @@ export default function initIntro() {
         videoPreviewEl.__videoControl.play();
         videoEl.pause();
 
+        destroyLoadingIndicator();
+
         window.removeEventListener('scroll', zoomOut);
         window.removeEventListener('resize', zoomOut);
         document.removeEventListener('click', handleOuterClick);
         document.removeEventListener('keyup', handleEsc);
 
+        videoInnerEl.removeEventListener(support.transition.end, handleZoomInEnd);
         videoInnerEl.addEventListener(support.transition.end, handleZoomOutEnd);
     }
 
@@ -113,12 +128,45 @@ export default function initIntro() {
         }
     }
 
-    function handleZoomOutEnd() {
+    function handleZoomInEnd(e) {
+        if (e.target !== videoInnerEl) {
+            return;
+        }
+        initLoadingIndicator();
+    }
+
+    function handleZoomOutEnd(e) {
+        if (e.target !== videoInnerEl) {
+            return;
+        }
         document.body.classList.remove('is-intro-zoom-out');
         videoInnerEl.removeEventListener(support.transition.end, handleZoomOutEnd);
         initTilt();
     }
 
+    function handleDataEnough() {
+        videoEl.classList.remove('is-loading');
+    }
+
+    function handleDataWaiting() {
+        videoEl.classList.add('is-loading');
+    }
+
+    function initLoadingIndicator() {
+        if (!isVideoHasData) {
+            videoEl.classList.add('is-loading');
+        }
+        videoEl.addEventListener('play', handleDataEnough);
+        videoEl.addEventListener('playing', handleDataEnough);
+        videoEl.addEventListener('waiting', handleDataWaiting);
+    }
+
+    function destroyLoadingIndicator() {
+        videoEl.classList.remove('is-loading');
+        videoEl.removeEventListener('play', handleDataEnough);
+        videoEl.removeEventListener('playing', handleDataEnough);
+        videoEl.removeEventListener('waiting', handleDataWaiting)
+    }
 
     function initTilt() {
         $videoTiltEl.tilt();

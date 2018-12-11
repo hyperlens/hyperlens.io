@@ -269,6 +269,23 @@
     .intro__title {transform: none; margin-bottom: 80px;}
 }
 
+@loader-length: 24 * 3.14 * 2; // длина окружности
+.intro__video-loader {
+    width: 50px; height: 50px; margin: auto; animation: loader-rotate 2s linear infinite; position: absolute; left: 0; right: 0; top: 0; bottom: 0; pointer-events: none; opacity: 0; transition: 0.1s;
+    .intro__video.is-loading + & {opacity: 1; transition: 0.5s;}
+}
+.intro__video-loader-path { fill: none; stroke: currentColor; stroke-width: 2px; stroke-linecap: round; animation: loader-dash 1.5s ease-in-out infinite; }
+
+@keyframes loader-rotate {
+    0% {transform: rotate(-90deg); -webkit-backface-visibility: hidden; /* fix blurry chrome */}
+    100% {transform: rotate(270deg); -webkit-backface-visibility: hidden; /* fix blurry chrome */}
+}
+@keyframes loader-dash {
+    0% { stroke-dasharray: 1, 200; stroke-dashoffset: 0; }
+    50% { stroke-dasharray: @loader-length * 0.8, 400; stroke-dashoffset: 0; }
+    100% { stroke-dasharray: @loader-length * 0.8, 400; stroke-dashoffset: -@loader-length + 1px; }
+}
+
 
 // index platform
 .index-platform {}
