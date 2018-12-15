@@ -1,14 +1,14 @@
 {% extends "layouts/default.njk" %}
 {% set page_title = "" %}
 {% set page_description = "" %}
-{% set body_class = "u-bg--black" %}
+{% set body_class = "u-bg--black animate-content-initial" %}
 
 {% block content %}
 
 
     <article class="main-inner">
-        <section class="intro u-container" data-observe-bg="black" data-observe-threshold="0.25">
-            <div class="intro__inner intro__inner--index">
+        <section class="page-intro-wrap u-container" data-observe-bg="black" data-observe-threshold="0.25">
+            <div class="page-intro intro intro--index">
                 <div class="intro__center">
                     <div class="intro__video-wrap-outer"> {# el to calculate actual size #}
                         <div class="intro__video-wrap-inner" data-intro-video-inner> {# el to apply transforms #}

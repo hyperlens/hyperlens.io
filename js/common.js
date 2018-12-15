@@ -17,7 +17,3 @@ inlineSvg();
 initToggle();
 clickBlur();
 iosForcePreload();
-
-setTimeout(() => {
-    document.body.classList.remove('animate-content-initial');
-}, 3000);

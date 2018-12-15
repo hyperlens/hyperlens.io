@@ -11,6 +11,11 @@ initIntro();
 initHorizontal();
 
 
+setTimeout(() => {
+    document.body.classList.remove('animate-content-initial');
+}, 3000);
+
+
 const $onePagerLink = $('[data-one-pager]');
 $onePagerLink.on('click', function (e) {
     e.preventDefault();

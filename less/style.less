@@ -62,6 +62,11 @@
     .u-toggle-trigger {display: none;}
 }
 .main-wrap {}
+.page-intro-wrap {display: flex; /* IE fix: force parent flex */}
+.page-intro {min-height: 100vh; width: 100%; display: flex; align-items: center; position: relative; z-index: 1; overflow: hidden; padding-top: @header-height-fallback; padding-top: var(--header-height); padding-bottom: 32px;}
+@media (min-width: @breakpoint-large-up) {
+    .page-intro {padding-bottom: 64px;}
+}
 // override .header__menu {&&}
 .animate-content-initial.animate-content-initial {
     .hl-logo {animation: hl-logo @hl-logo-animation-time (@hl-logo-lens-animation-time - 0.05s) backwards ease-out;}
@@ -235,16 +240,15 @@
     .header, .intro__title, .intro__controls, .index-platform {transition: opacity 0.4s 0.2s;}
     .intro__video, .intro__video-wrap-inner {transition: 0.6s;}
 }
-.intro {display: flex; /* IE fix: force parent flex */}
-.intro__inner {
-    min-height: 100vh; display: flex; align-items: center; justify-content: center; flex-direction: column; width: 100%; position: relative; z-index: 1; padding-top: @header-height-fallback; padding-top: var(--header-height); padding-bottom: 32px;
-}
-.intro__inner--index {
-    justify-content: space-between;
+.intro {}
+.intro--index {
+    justify-content: space-between; flex-direction: column;
     &::before {content: '';}
 }
+.intro--product {justify-content: center;}
 .intro__center {}
 .intro__video-wrap-outer {width: 100%; position: relative;}
+.intro__video-wrap-outer--tint::after {content: ''; position: absolute; left: 0; right: 0; top: 0; bottom: 0; background: rgba(255,255,255,0.15);}
 .intro__video {width: 100%; display: block; outline: none;}
 .intro__video--main {opacity: 0;}
 .intro__video--preview {position: absolute; left: 0; top: 0; right: 0; bottom: 0;}
@@ -261,7 +265,6 @@
     .intro__video-close {width: 50px; height: 50px;}
 }
 @media (min-width: @breakpoint-large-up) {
-    .intro__inner {padding-bottom: 64px;}
     .intro__controls {width: 45%; align-self: flex-end; }
 }
 @media (orientation: landscape) {
@@ -699,7 +702,10 @@
 // Company
 
 // company intro
-.company-intro {min-height: 100vh; padding-top: @header-height-fallback; padding-top: var(--header-height); position: relative; display: flex; align-items: center; z-index: 1; overflow: hidden;}
+.company-intro {padding-bottom: 40px;}
+@media (min-width: @breakpoint-large-up) {
+    .company-intro {padding-bottom: 100px;}
+}
 .company-intro__inner {position: relative; width: 100%;}
 .company-intro__title {}
 .company-intro__lens-wrap {}
@@ -764,7 +770,7 @@
 // Investors
 
 // investors intro
-.investors-intro {min-height: 100vh; padding-top: @header-height-fallback; padding-top: var(--header-height); position: relative; display: flex; align-items: center; z-index: 1; overflow: hidden;}
+.investors-intro {}
 .investors-intro__inner {position: relative; width: 100%;}
 .investors-intro__lens-layer {
     position: absolute; left: 50%; top: 50%; margin: (-117px - 10px) 0 0 -32px; z-index: -1; width: 64px;
@@ -823,7 +829,7 @@
 // Business
 
 // business intro
-.business-intro {min-height: 100vh; padding-top: @header-height-fallback; padding-top: var(--header-height); position: relative; display: flex; align-items: center; z-index: 1; overflow: hidden;}
+.business-intro {}
 .business-intro__inner {position: relative; width: 100%;}
 .business-intro__lens-layer {position: absolute; left: 50%; top: 50%; margin: (-172px - 10px) 0 0 -55px; z-index: -1; width: 110px;}
 @media (min-width: @breakpoint-small-up) {
@@ -837,7 +843,7 @@
 // Developers
 
 // developers intro
-.developers-intro {min-height: 100vh; padding-top: @header-height-fallback; padding-top: var(--header-height); position: relative; display: flex; align-items: center; z-index: 1; overflow: hidden;}
+.developers-intro {}
 .developers-intro__inner {position: relative; width: 100%;}
 .developers-intro__lens-layer {position: absolute; left: 50%; top: 50%; margin: (-172px - 10px) 0 0 -55px; z-index: -1; width: 110px;}
 @media (min-width: @breakpoint-small-up) {
@@ -851,7 +857,7 @@
 
 // Documents
 .page--documents {overflow: hidden;}
-.documents-intro {min-height: 100vh; padding-top: @header-height-fallback; padding-top: var(--header-height); padding-bottom: 60px; position: relative; display: flex; flex-direction: column; justify-content: flex-end; z-index: 1; overflow: hidden;}
+.documents-intro {padding-bottom: 60px; flex-direction: column; justify-content: flex-end; align-items: stretch;}
 .documents-intro__list {
     list-style: none; padding-left: 0;
     li {padding: 0; margin: 0;}
