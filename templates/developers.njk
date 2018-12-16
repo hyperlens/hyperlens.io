@@ -4,14 +4,17 @@
 {% set body_class = "" %}
 
 {% block content %}
-
-
     <article class="main-inner">
         <section class="page-intro-wrap u-container">
-            <div class="page-intro developers-intro">
+            <div class="page-intro developers-intro intro-vertical-lens" data-observe-show data-observe-threshold="0.25">
                 <div class="developers-intro__inner">
-                    <img class="developers-intro__lens-layer" src="{{ url_prefix }}img/lens-developers.svg" alt="" role="presentation">
-                    <h2 class="developers-intro__title u-title">
+                    <div class="intro-vertical-lens__cover developers-intro__cover developers-intro__cover--left u-hidden-small-down u-bg__inner"></div>
+                    <img class="intro-vertical-lens__layer developers-intro__lens-layer developers-intro__lens-layer--1" src="{{ url_prefix }}img/lens-developers.svg" alt="" role="presentation">
+                    <img class="intro-vertical-lens__layer developers-intro__lens-layer developers-intro__lens-layer--2" src="{{ url_prefix }}img/lens-developers.svg" alt="" role="presentation">
+                    <img class="intro-vertical-lens__layer developers-intro__lens-layer developers-intro__lens-layer--3" src="{{ url_prefix }}img/lens-developers.svg" alt="" role="presentation">
+                    <img class="intro-vertical-lens__layer developers-intro__lens-layer developers-intro__lens-layer--4" src="{{ url_prefix }}img/lens-developers.svg" alt="" role="presentation">
+                    <div class="intro-vertical-lens__cover developers-intro__cover developers-intro__cover--right u-hidden-small-down u-bg__inner"></div>
+                    <h2 class="intro-vertical-lens__title u-title">
                         Now your story has no limits for expression <br> 改变你与世界互动的方式
                     </h2>
                 </div>

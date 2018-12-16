@@ -11,7 +11,7 @@ rootUnits.install({
     // disable RAF
     measure: measureTask => measureTask(),
 });
-initObserver();
+document.addEventListener("DOMContentLoaded", initObserver);
 new HeaderMenu();
 inlineSvg();
 initToggle();
