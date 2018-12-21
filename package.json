@@ -40,6 +40,7 @@
     "gulp-cache": "^1.0.2",
     "gulp-cache-bust": "^1.4.0",
     "gulp-clean-css": "^4.0.0",
+    "gulp-htmlmin": "^5.0.1",
     "gulp-imagemin": "^5.0.3",
     "gulp-less": "^4.0.1",
     "gulp-nunjucks-render": "^2.2.2",

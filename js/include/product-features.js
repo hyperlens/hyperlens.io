@@ -23,25 +23,37 @@ export default function initFeatures() {
 
     const featureElList = document.querySelectorAll('[data-features-item]');
     featureElList.forEach((item) => {
-        item.querySelector('[data-feature-open]').addEventListener('click', () => {
-            const activeItem = document.querySelector('[data-features-item].is-active');
-            if (activeItem && activeItem !== item) {
-                activeItem.classList.remove('is-active');
-                item.classList.remove('is-inactive');
-            }
+        // open button
+        const openButtonEl = item.querySelector('[data-feature-open]');
+        openButtonEl.addEventListener('click', () => {
+            console.log('open')
+            // open item when another is opened
+            // const activeItem = document.querySelector('[data-features-item].is-active');
+            // if (activeItem && activeItem !== item) {
+            //     activeItem.classList.remove('is-active');
+            //     item.classList.remove('is-inactive');
+            // }
+            openButtonEl.disabled = true;
+            closeButtonEl.disabled = false;
             item.classList.add('is-active');
+            console.log(item.classList)
             document.querySelectorAll('[data-features-item]:not(.is-active)').forEach((inactiveItem) => {
                 inactiveItem.classList.add('is-inactive');
             });
-
         });
-        item.querySelector('[data-feature-close]').addEventListener('click', () => {
-            featureElList.forEach((outItem) => {
-                outItem.classList.remove('is-active', 'is-inactive');
+        // close button
+        const closeButtonEl = item.querySelector('[data-feature-close]');
+        closeButtonEl.addEventListener('click', () => {
+            console.log('close')
+            openButtonEl.disabled = false;
+            closeButtonEl.disabled = true;
+            item.classList.remove('is-active');
+            featureElList.forEach((inactiveItem) => {
+                inactiveItem.classList.remove('is-inactive');
             });
         });
+        // element as open button
         // item.addEventListener('click', () => {
-        //
         //     const activeItem = document.querySelector('[data-features-item].is-active');
         //     if (activeItem && activeItem !== item) {
         //         activeItem.classList.remove('is-active');

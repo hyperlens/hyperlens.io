@@ -8,6 +8,7 @@ const beeper = require('beeper');
 const nunjucks = require('gulp-nunjucks-render');
 const cacheBust = require('gulp-cache-bust');
 const data = require('gulp-data');
+const htmlmin = require('gulp-htmlmin');
 // js
 const webpack = require('webpack');
 const webpackStream = require('webpack-stream');
@@ -109,6 +110,7 @@ gulp.task('templates', function () {
             ext: '.html',
             data: {},
         }))
+        .pipe(htmlmin({ collapseWhitespace: true, conservativeCollapse: true }))
         .pipe(gulp.dest(paths.dest.html));
 });
 

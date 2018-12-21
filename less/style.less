@@ -69,10 +69,11 @@
 }
 // override .header__menu {&&}
 .animate-content-initial.animate-content-initial {
+    animation: fix-height @hl-content-delay backwards;
     .hl-logo {animation: hl-logo @hl-logo-animation-time (@hl-logo-lens-animation-time - 0.05s) backwards ease-out;}
     .hl-logo__lens--1 {animation: hl-logo-lens-1 @hl-logo-lens-animation-time backwards;}
     .hl-logo__lens--2 {animation: hl-logo-lens-2 @hl-logo-lens-animation-time backwards;}
-    .main-inner, .header__menu, .header__offcanvas-button, .footer {animation: slide-up 1s (@hl-logo-animation-time + @hl-logo-lens-animation-time - 0.4s) backwards;}
+    .main-inner, .header__menu, .header__offcanvas-button, .footer {animation: slide-up 1s @hl-content-delay backwards;}
 }
 
 
@@ -80,7 +81,11 @@
 
 
 
-
+@keyframes fix-height {
+    0% {height: 100vh; overflow: hidden;}
+    99.9% {height: 100vh; overflow: hidden;}
+    100% {height: auto; overflow: visible;}
+}
 @keyframes fade-in {
     0% {opacity: 0;}
     100% {opacity: 1;}
@@ -113,6 +118,7 @@
 @hl-logo-small-height: 54px;
 @hl-logo-animation-time: 0.8s;
 @hl-logo-lens-animation-time: 2s;
+@hl-content-delay: @hl-logo-animation-time + @hl-logo-lens-animation-time - 0.4s;
 @header-height-fallback: 112px;
 :root {
     @calc-header-height: (@hl-logo-small-height + 16px * 2);
