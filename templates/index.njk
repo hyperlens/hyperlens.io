@@ -19,20 +19,20 @@
                                 <source src="{{ url_prefix }}video/case-basic.mp4" type="video/mp4; codecs=avc1">
                             </video>
                             <video class="intro__video intro__video--main" preload="auto" playsinline data-intro-video>
-                                {# firefox and chrome not respect [media] @TODO disable other #}
-                                {#<source src="{{ url_prefix }}video/index-intro-1920-av1.webm" type="video/webm; codecs=av01.0.08M.08" media="screen and (min-width: 1921px)">#}
-                                <source src="{{ url_prefix }}video/index-intro-1280-av1.webm" type="video/webm; codecs=av01.0.08M.08" media="screen and (min-width: 1024px)">
-                                <source src="{{ url_prefix }}video/index-intro-640-av1.webm" type="video/webm; codecs=av01.0.08M.08" media="screen and (min-width: 640px)">
+                                {# firefox and chrome not respect [media] #}
+                                {#<source src="{{ url_prefix }}video/index-intro-1920-av1.webm" type="video/webm; codecs=av01.0.08M.08" media="(min-width: 1921px)">#}
+                                <source src="{{ url_prefix }}video/index-intro-1280-av1.webm" type="video/webm; codecs=av01.0.08M.08" media="(min-width: 1024px)">
+                                {#<source src="{{ url_prefix }}video/index-intro-640-av1.webm" type="video/webm; codecs=av01.0.08M.08" media="(min-width: 640px)">#}
                                 <source src="{{ url_prefix }}video/index-intro-426-av1.webm" type="video/webm; codecs=av01.0.08M.08">
                                 {#<source src="{{ url_prefix }}video/index-intro-1920-vp9.webm" type="video/webm; codecs=vp9" media="(min-width: 1921px)">#}
                                 <source src="{{ url_prefix }}video/index-intro-1280-vp9.webm" type="video/webm; codecs=vp9" media="(min-width: 1024px)">
-                                <source src="{{ url_prefix }}video/index-intro-640-vp9.webm" type="video/webm; codecs=vp9" media="(min-width: 640px)">
+                                {#<source src="{{ url_prefix }}video/index-intro-640-vp9.webm" type="video/webm; codecs=vp9" media="(min-width: 640px)">#}
                                 <source src="{{ url_prefix }}video/index-intro-426-vp9.webm" type="video/webm; codecs=vp9">
-                                {#<source src="{{ url_prefix }}video/index-intro-1920-hevc.mp4" type="video/mp4; codecs=hevc" media="(min-width: 1900px)">#}
+                                <source src="{{ url_prefix }}video/index-intro-1920-hevc.mp4" type="video/mp4; codecs=hevc" media="(min-width: 1900px)">
                                 <source src="{{ url_prefix }}video/index-intro-1280-hevc.mp4" type="video/mp4; codecs=hevc" media="(min-width: 1024px)">
                                 <source src="{{ url_prefix }}video/index-intro-640-hevc.mp4" type="video/mp4; codecs=hevc" media="(min-width: 640px)">
                                 <source src="{{ url_prefix }}video/index-intro-426-hevc.mp4" type="video/mp4; codecs=hevc">
-                                {#<source src="{{ url_prefix }}video/index-intro-1920.mp4" type="video/mp4; codecs=avc1" media="(min-width: 1921px)">#}
+                                <source src="{{ url_prefix }}video/index-intro-1920.mp4" type="video/mp4; codecs=avc1" media="(min-width: 1921px)">
                                 <source src="{{ url_prefix }}video/index-intro-1280.mp4" type="video/mp4; codecs=avc1" media="(min-width: 1024px)">
                                 <source src="{{ url_prefix }}video/index-intro-640.mp4" type="video/mp4; codecs=avc1" media="(min-width: 640px)">
                                 <source src="{{ url_prefix }}video/index-intro-426.mp4" type="video/mp4; codecs=avc1">
@@ -342,6 +342,7 @@
         <section class="index-technology u-container" data-observe-bg="black" data-observe-threshold="0.25">
             <div class="perspective-video-section u-section">
                 <video class="perspective-video index-technology__video" preload="auto" muted playsinline loop data-intro-video data-observe-show data-observe-play>
+                    <source src="{{ url_prefix }}video/index-technology-av1.webm" type="video/webm; codecs=codecs=av01.0.08M.08">
                     <source src="{{ url_prefix }}video/index-technology.webm" type="video/webm; codecs=vp9">
                     <source src="{{ url_prefix }}video/index-technology.mp4" type="video/mp4">
                 </video>
