@@ -17,7 +17,7 @@
     --rh: 100vh;
 }
 @t-body-bg: 1s;
-.u-bg, .u-bg, .u-bg__inner {transition: @t-body-bg; transition-property: background-color, color;}
+.u-bg, .u-bg__inner {transition: @t-body-bg; transition-property: background-color, color;}
 .u-bg--gray {
     &, .u-bg__inner {background: @c-grey-light;}
 }
@@ -158,13 +158,16 @@
 @menu-icon-transition: .25s;
 @menu-icon-color: currentColor;
 .header__offcanvas-button {display: block; width: @menu-icon-size; height: @menu-icon-size; position: relative; text-align: center;}
+.header__offcanvas-icon--middle {
+    position: absolute; height: 2px; width: 100%; left: 0; top: 50%; margin-top: -1px; font-size: 0; transition: opacity @menu-icon-transition ease-in-out; background: @menu-icon-color;
+    .is-active > & {opacity: 0; transition: opacity 0.15s ease-out;}
+}
 .header__offcanvas-icon {
-    transition: background-color @menu-icon-transition ease-in-out; background: @menu-icon-color; position: absolute; height: 2px; width: 100%; left: 0; top: 50%; margin-top: -1px; font-size: 0;
+    position: absolute; height: 2px; width: 100%; left: 0; top: 50%; margin-top: -1px; font-size: 0;
     &::before, &::after {transition: transform @menu-icon-transition; background: @menu-icon-color; height: 100%; width: 100%; content: ''; position: absolute; left: 0;}
     &::before {transform: translateY(12px);}
     &::after {transform: translateY(-12px);}
     .is-active > & {
-        background-color: transparent; transition: 0.15s ease-out;
         &:before {transform: rotate3d(0, 0, 1, 45deg);}
         &:after {transform: rotate3d(0, 0, 1, -45deg);}
     }

@@ -5,6 +5,7 @@ import debounce from 'lodash-es/debounce';
 
 export default function HeaderMenu() {
     const $win = $(window);
+    const $html = $('html');
     const $body = $('body');
 
     let isAnimating = false;
@@ -74,10 +75,12 @@ export default function HeaderMenu() {
         // фиксация положения экрана
         //@TODO переделать на html {overflow: hidden}, когда починят баг в сафари
         //@see https://bugs.webkit.org/show_bug.cgi?id=153856
+        //@see https://bugs.webkit.org/show_bug.cgi?id=153852
         $headerMenu.css('min-height', menuHeight);
         modalScrollPos = {x: window.pageXOffset, y: window.pageYOffset};
         scrollBarWidth = window.innerWidth - $body.width();
-        $body.css({width: window.innerWidth - scrollBarWidth, height: window.innerHeight, position: 'fixed', 'margin-top': modalScrollPos.y * -1, 'overflow-y': 'visible'});
+        $html.css({'overflow-y': 'visible'});
+        $body.css({width: window.innerWidth - scrollBarWidth, height: window.innerHeight, position: 'fixed', 'margin-top': modalScrollPos.y * -1});
         $header.trigger('headerOpenStartAnimation');
         $headerContainer.removeClass('header--menu-animate-out').addClass('header--menu-active header--menu-animate-in');
         if (scrollBarWidth > 0) {
@@ -98,7 +101,8 @@ export default function HeaderMenu() {
         $header.trigger('headerCloseStartAnimation');
         _commonToggle();
         //@TODO не учитывается ресайз
-        $body.css({width: '', height: '', position: '', 'margin-top': '', 'overflow-y': ''});
+        $html.css({'overflow-y': ''});
+        $body.css({width: '', height: '', position: '', 'margin-top': ''});
         $header.css({position: '', overflow: '', height: ''});
         window.scrollTo(modalScrollPos.x, modalScrollPos.y);
         $header.trigger('headerCloseStartAnimation');
