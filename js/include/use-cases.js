@@ -1,5 +1,5 @@
 import debounce from 'lodash-es/debounce'
-import Rellax from 'rellax';
+import Rellax from './rellax';
 import DragScroll from './dragscroll';
 import VideoControl from '../utils/video-control';
 
@@ -65,18 +65,14 @@ function initRellax() {
     if (rellax) {
         rellax.refresh();
     } else {
-        // document.querySelector('[data-use-case-list]').style.overflow = 'hidden';
         rellax = new Rellax('[data-rellax-speed]', {
-            wrapper: '[data-use-case-list]',
+            wrapper: document.querySelector('[data-use-case-list]')/*.children[0]*/,
             relativeToWrapper: true,
             round: false,
             vertical: true,
             horizontal: false,
             max: 1000,
         });
-        // setTimeout(() => {
-        //     document.querySelector('[data-use-case-list]').style.overflow = '';
-        // }, 60000);
     }
 }
 

@@ -22,7 +22,6 @@
     "intersection-observer": "^0.5.1",
     "jquery": "^3.3.1",
     "lodash-es": "^4.17.11",
-    "rellax": "^1.8.0",
     "root-units": "^2.2.0"
   },
   "devDependencies": {

@@ -37,7 +37,7 @@ body {
 }
 
 a, .u-link {
-    color: inherit; outline: none; text-decoration: none; text-decoration-skip: ink;
+    color: inherit; outline: none; text-decoration: none; text-decoration-skip-ink: auto;
     &:hover, &:focus {text-decoration: underline; outline: none;}
 }
 @supports (text-decoration-color: transparent) {
@@ -46,6 +46,7 @@ a, .u-link {
         &:hover, &:focus {text-decoration-color: currentColor;}
     }
 }
+/*@TODO safari bug inline-flex + text-decoration-color*/
 .u-link--icon { display: inline-flex; align-items: flex-end;}
 .u-link__icon {margin-left: 8px; margin-bottom: 0.275em; stroke: currentColor; flex-shrink: 0;}
 .u-no-link {text-decoration: none;}

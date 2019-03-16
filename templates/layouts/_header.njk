@@ -7,18 +7,37 @@
             {% include "../../img/hyperlens-logo-lens-2.svg" %}
         </a>
         <div class="header__menu-layer u-bg__inner"></div>
-        <nav class="header__menu" data-header-menu style="column-gap: 10px;">
-            <a class="header__link {{ 'is-active' if __fileName__ === 'product' }}" href="{{ url_prefix }}product.html">Product</a>
-            <a class="header__link {{ 'is-active' if __fileName__ === 'company' }}" href="{{ url_prefix }}company.html">Company</a>
-            <a class="header__link {{ 'is-active' if __fileName__ === 'investors' }}" href="{{ url_prefix }}investors.html">Investors</a>
-            <a class="header__link {{ 'is-active' if __fileName__ === 'developers' }}" href="{{ url_prefix }}developers.html">Developers</a>
-            <a class="header__link {{ 'is-active' if __fileName__ === 'business' }}" href="{{ url_prefix }}business.html">Business</a>
-            <!--<a class="header__link {{ 'is-active' if __fileName__ === 'documents' }}" href="{{ url_prefix }}documents.html">Documents</a>-->
-            <a class="header__link {{ 'is-active' if __fileName__ === 'faq' }}" href="{{ url_prefix }}faq.html">FAQ      </a>
+        <menu class="header__menu" data-header-menu>
+            <li class="header__item">
+                <a class="header__link {{ 'is-active' if __fileName__ === 'product' }}" href="{{ url_prefix }}product.html">Product</a>
+            </li>
+            <li class="header__item">
+                <a class="header__link {{ 'is-active' if __fileName__ === 'company' }}" href="{{ url_prefix }}company.html">Company</a>
+            </li>
+            <li class="header__item">
+                <a class="header__link {{ 'is-active' if __fileName__ === 'investors' }}" href="{{ url_prefix }}investors.html">Investors</a>
+            </li>
+            <li class="header__item">
+                <a class="header__link {{ 'is-active' if __fileName__ === 'developers' }}" href="{{ url_prefix }}developers.html">Developers</a>
+            </li>
+            <li class="header__item">
+                <a class="header__link {{ 'is-active' if __fileName__ === 'business' }}" href="{{ url_prefix }}business.html">Business</a>
+            </li>
+{#
+            <li class="header__item">
+                <a class="header__link {{ 'is-active' if __fileName__ === 'documents' }}" href="{{ url_prefix }}documents.html">Documents</a>
+            </li>
+#}
+            <li class="header__item">
+                <a class="header__link {{ 'is-active' if __fileName__ === 'faq' }}" href="{{ url_prefix }}faq.html">FAQ</a>
+            </li>
 
-            <div class="header__menu-expand u-hidden-large-up"></div>
-            <a class="header__menu-email u-hidden-large-up" href="mailto:hi@hyperlens.com">hi@hyperlens.com</a>
-        </nav>
+            <li class="header__menu-expand u-hidden-large-up"></li>
+            <li class="header__menu-email u-hidden-large-up">
+                <a href="mailto:hi@hyperlens.com">hi@hyperlens.com</a>
+            </li>
+
+        </menu>
         <button class="header__offcanvas-button u-semantic-button" data-header-button>
             <span class="header__offcanvas-icon--middle"></span>
             <span class="header__offcanvas-icon">Menu</span>

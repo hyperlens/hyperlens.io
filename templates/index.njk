@@ -46,12 +46,20 @@
                             </svg>
                         </div>
                     </div>
-                    <h1 class="intro__title u-title">Reality is about <br>
-                        to get a lot more exciting <br>
-                        现实即将获得更多令人兴奋的</h1>
+                    <div class="intro__content u-text-center">
+                        <h1 class="intro__title u-title">
+                            Reality is about <br>
+                            to get a lot more exciting <br>
+                            现实即将获得更多令人兴奋的
+                        </h1>
+                        <button class="intro__controls-item u-link u-semantic-button" data-intro-watch>
+                            <img class="intro__controls-icon" src="{{ url_prefix }}img/icon-triangle-play.svg" width="14" height="14" alt="" role="presentation" data-inline-svg>
+                            Watch video
+                        </button>
+                    </div>
                 </div>
+{#
                 <div class="intro__controls u-controls">
-<!--
                     <button class="intro__controls-item u-controls__item u-link u-semantic-button" data-intro-watch>
                         <img class="intro__controls-icon" src="{{ url_prefix }}img/icon-triangle-play.svg" width="14" height="14" alt="" role="presentation" data-inline-svg>
                         Watch video
@@ -64,8 +72,8 @@
                         <img class="intro__controls-icon" src="{{ url_prefix }}img/icon-triangle-down.svg" width="14" height="14" alt="" role="presentation" data-inline-svg>
                         One pager
                     </a>
--->
                 </div>
+#}
             </div>
         </section>
 
@@ -345,7 +353,7 @@
         <section class="index-technology u-container" data-observe-bg="black" data-observe-threshold="0.25">
             <div class="perspective-video-section u-section">
                 <video class="perspective-video index-technology__video" preload="auto" muted playsinline loop data-intro-video data-observe-show data-observe-play>
-                    <source src="{{ url_prefix }}video/index-technology-av1.webm" type="video/webm; codecs=codecs=av01.0.08M.08">
+                    <source src="{{ url_prefix }}video/index-technology-av1.webm" type="video/webm; codecs=av01.0.08M.08">
                     <source src="{{ url_prefix }}video/index-technology.webm" type="video/webm; codecs=vp9">
                     <source src="{{ url_prefix }}video/index-technology.mp4" type="video/mp4">
                 </video>
@@ -394,11 +402,10 @@
                     </div>
                 </div>
             </div>
-<!---
+{#
             <div class="u-section__part index-technology__controls u-show-fade" data-observe-show>
                 <p class="index-technology__controls-caption">Development specs and opportunities:</p>
                 <div class="u-controls">
-                    {#@TODO safari bug inline-flex + text-decoration-color#}
                     <a class="index-technology__controls-item u-controls__item u-link--icon" href="#" target="_blank" rel="nofollow noopener">
                         APIs
                         <img class="u-link__icon" src="{{ url_prefix }}img/icon-arrow-link.svg" width="13" height="13" alt="" role="presentation" data-inline-svg>
@@ -417,7 +424,7 @@
                     </a>
                 </div>
             </div>
---->
+#}
         </section>
 
         <section class="index-soft u-section u-container" data-observe-show data-observe-threshold="0.25">
