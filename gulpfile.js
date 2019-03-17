@@ -108,7 +108,9 @@ gulp.task('templates', function () {
         .pipe(nunjucks({
             path: paths.src.templatesDir,
             ext: '.html',
-            data: {},
+            data: {
+                __env__: process.env,
+            },
         }))
         .pipe(htmlmin({ collapseWhitespace: true, conservativeCollapse: true }))
         .pipe(gulp.dest(paths.dest.html));

@@ -1,4 +1,4 @@
-{% set url_prefix = '' %}
+{% set url_prefix = '/' if __env__.NODE_ENV === 'production' else '' %}
 
 <!doctype html>
 <html lang="en">
@@ -31,8 +31,4 @@
 {#{% include 'layouts/_seo-gtag.njk' %}#}
 </body>
 </html>
-
-
-
-
 
