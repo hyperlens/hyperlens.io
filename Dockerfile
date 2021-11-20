@@ -1,12 +1,10 @@
-FROM node:10-alpine AS build
+FROM node:12-alpine AS build
 ARG NODE_AUTH_TOKEN
-
-RUN npm i -g npm@7
 
 WORKDIR /app
 COPY package*.json ./
 COPY .npmrc ./
-RUN npm ci
+RUN npm i
 COPY . .
 RUN npm run build
 
