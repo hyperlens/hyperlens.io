@@ -1,0 +1,63 @@
+name: Release
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  build-image:
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2.3.4
+
+      - name: Build the Docker image
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          ref=${{ github.ref }}
+          ref=${ref/refs\/tags\//}
+          docker build \
+          --build-arg NODE_AUTH_TOKEN=${NPM_TOKEN} \
+          --tag=eu.gcr.io/hyperlens/app:$ref . \
+          --cache-from=eu.gcr.io/hyperlens/app:latest
+
+      - name: Push docker image
+        run: |
+          ref=${{ github.ref }}
+          ref=${ref/refs\/tags\//}
+          echo "${{ secrets.GCLOUD_AUTH }}" | base64 -d | docker login -u _json_key --password-stdin https://eu.gcr.io
+          docker push eu.gcr.io/hyperlens/app:$ref
+
+      - name: Push latest tag
+        run: |
+          ref=${{ github.ref }}
+          ref=${ref/refs\/tags\//}
+          echo "${{ secrets.GCLOUD_AUTH }}" | base64 -d | docker login -u _json_key --password-stdin https://eu.gcr.io
+          docker tag eu.gcr.io/hyperlens/app:$ref eu.gcr.io/hyperlens/app:latest
+          docker push eu.gcr.io/hyperlens/app:latest
+
+  deploy-prod:
+    runs-on: ubuntu-18.04
+    needs: ['build-image']
+    steps:
+      - name: Get kubeconfig file from GKE
+        uses: google-github-actions/get-gke-credentials@main
+        with:
+          credentials: ${{ secrets.GCLOUD_AUTH }}
+          project_id: hyperlens
+          location: europe-west1-b
+          cluster_name: gke-prod-cluster
+
+      - name: Install kubectl
+        uses: azure/setup-kubectl@v1
+
+      - name: Update image
+        run: |
+          ref=${{ github.ref }}
+          ref=${ref/refs\/tags\//}
+          kubectl set image deployments/app app=eu.gcr.io/hyperlens/app:$ref
+
+      - name: Verify rollout status
+        run: |
+          kubectl rollout status deployment/app
