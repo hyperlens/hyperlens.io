@@ -12,4 +12,4 @@ RUN npm run build
 FROM nginx:1.21.1-alpine
 WORKDIR /usr/share/nginx/html
 COPY deploy/nginx.conf /etc/nginx/conf.d/default.conf
-COPY --from=build /app/build ./
+COPY --from=build /app/public ./
