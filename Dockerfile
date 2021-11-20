@@ -1,10 +1,7 @@
-FROM node:16-alpine AS build
+FROM node:12-alpine AS build
 ARG NODE_AUTH_TOKEN
 
-RUN npm i -g npm@6
-
-# install node-gyp dependencies
-RUN apk add --no-cache --virtual .gyp python3 make g++
+RUN npm i -g npm@7
 
 WORKDIR /app
 COPY package*.json ./
