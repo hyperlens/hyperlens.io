@@ -1,8 +1,16 @@
 {
-  "name": "hyperlens",
+  "name": "@hyperlens.io/hyperlens",
   "version": "1.0.0",
+  "private": true,
   "description": "website",
   "main": "gulpfile.js",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hyperlens/hyperlens.io.git"
+  },
   "scripts": {
     "prod": "npm run production",
     "production": "npm run build",
@@ -12,10 +20,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "surge": "npm run production && surge ./public hl-demo.surge.sh"
   },
-  "repository": "",
   "author": "shrpne",
   "license": "ISC",
-  "private": true,
   "dependencies": {
     "core-js": "^2.6.5",
     "inline-svg": "^2.2.3",

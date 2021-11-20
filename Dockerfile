@@ -1,4 +1,4 @@
-FROM node:12-alpine AS build
+FROM node:8-alpine AS build
 ARG NODE_AUTH_TOKEN
 
 RUN npm i -g npm@7
