@@ -1,4 +1,3 @@
-import 'intersection-observer';
 import VideoControl from '../utils/video-control';
 
 // @TODO replace with web.dom-collections.for-each after core-js@3 release
